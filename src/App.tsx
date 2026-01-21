@@ -4,15 +4,22 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { lazy, Suspense } from "react";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Experience from "./pages/Experience";
-import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+
+// Lazy load pages for code splitting
+const About = lazy(() => import("./pages/About"));
+const Services = lazy(() => import("./pages/Services"));
+const Experience = lazy(() => import("./pages/Experience"));
+const Contact = lazy(() => import("./pages/Contact"));
 import Navigation from "./components/Navigation";
 import SetHeaderVar from "./components/SetHeaderVar";
 import ScrollToTop from "./components/ScrollToTop";
+import WhatsAppButton from "./components/WhatsAppButton";
+import { ErrorBoundary } from "./components/ErrorBoundary";
+import SkipToContent from "./components/SkipToContent";
+import LoadingSpinner from "./components/LoadingSpinner";
 
 const queryClient = new QueryClient();
 
@@ -23,24 +30,28 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <ScrollToTop />
-          <div className="min-h-screen">
-            <SetHeaderVar />
-            <Navigation />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/sobre-mi" element={<About />} />
-              <Route path="/servicios" element={<Services />} />
-              <Route path="/experiencia" element={<Experience />} />
-              <Route path="/contacto" element={<Contact />} />
-              {/* English routes for language toggle compatibility */}
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/experience" element={<Experience />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
+          <ErrorBoundary>
+            <SkipToContent />
+            <ScrollToTop />
+            <div className="min-h-screen">
+              <SetHeaderVar />
+              <Navigation />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/sobre-mi" element={<Suspense fallback={<LoadingSpinner />}><About /></Suspense>} />
+                <Route path="/servicios" element={<Suspense fallback={<LoadingSpinner />}><Services /></Suspense>} />
+                <Route path="/experiencia" element={<Suspense fallback={<LoadingSpinner />}><Experience /></Suspense>} />
+                <Route path="/contacto" element={<Suspense fallback={<LoadingSpinner />}><Contact /></Suspense>} />
+                {/* English routes for language toggle compatibility */}
+                <Route path="/about" element={<Suspense fallback={<LoadingSpinner />}><About /></Suspense>} />
+                <Route path="/services" element={<Suspense fallback={<LoadingSpinner />}><Services /></Suspense>} />
+                <Route path="/experience" element={<Suspense fallback={<LoadingSpinner />}><Experience /></Suspense>} />
+                <Route path="/contact" element={<Suspense fallback={<LoadingSpinner />}><Contact /></Suspense>} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              <WhatsAppButton />
+            </div>
+          </ErrorBoundary>
         </BrowserRouter>
       </TooltipProvider>
     </LanguageProvider>

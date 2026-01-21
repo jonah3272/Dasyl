@@ -47,9 +47,11 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       
       // About Section
       'about.title': 'Sobre Mí',
+      'about.background': 'Antecedentes Profesionales',
       'about.content': 'Soy psicólogo clínico y perito idóneo con más de 17 años de experiencia en Psicología Forense, con una trayectoria profesional que incluye la realización de más de 4,000 evaluaciones psicológicas forenses, intervención en casos de alto perfil y actuación como testigo experto en múltiples audiencias judiciales.',
       'about.content2': 'Me desempeñé como coordinador de la Unidad de Psicología Forense del Instituto de Medicina Legal y Ciencias Forenses de Panamá, he sido expresidente y soy miembro activo de la Asociación Panameña de Psicología Forense, la Asociación Latinoamericana de Psicología Jurídica y Forense y la Asociación Iberoamericana de Psicología Jurídica. Desarrollo además labores como docente universitario y consultor especializado en evaluación psicológica forense.',
       'about.contributions': 'He contribuido al fortalecimiento técnico de la Psicología Forense en Panamá mediante mi participación en proyectos de alcance nacional, entre ellos:',
+      'about.commitmentTitle': 'Compromiso Profesional',
       'about.contribution1': 'Elaboración de las Guías de Entrevista para Receptores de Denuncias de Violencia contra la Mujer en las Relaciones de Pareja (Ministerio Público).',
       'about.contribution2': 'Implementación del servicio de teleperitaje psicológico.',
       'about.contribution3': 'Redacción del procedimiento oficial de Psicología Forense del Instituto de Medicina Legal y Ciencias Forenses.',
@@ -97,6 +99,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       
       // Services Section
       'services.title': 'Servicios',
+      'services.subtitle': 'Servicios especializados en Psicología Forense y Clínica para procesos judiciales y evaluación psicológica profesional.',
+      'services.jurisdictions': 'Jurisdicciones',
       'services.forensic.title': 'Evaluación psicológica forense',
       'services.forensic.description': 'Evaluación técnica para procesos judiciales en las siguientes jurisdicciones:',
       'services.forensic.1': 'Penal',
@@ -127,7 +131,34 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       'contact.form.submit': 'Enviar Mensaje',
       'contact.form.sending': 'Enviando...',
       'contact.form.success': '¡Mensaje enviado!',
-      'contact.form.error': 'Error al enviar el mensaje. Por favor intente nuevamente.',
+      'contact.form.successMessage': 'Gracias por contactarnos. Responderemos dentro de 24 horas.',
+      'contact.form.error': 'Error al enviar',
+      'contact.form.errorMessage': 'Error al enviar el mensaje. Por favor intente nuevamente o contáctenos directamente.',
+      'contact.form.validation.nameMin': 'El nombre debe tener al menos 2 caracteres',
+      'contact.form.validation.nameMax': 'El nombre no puede exceder 100 caracteres',
+      'contact.form.validation.emailInvalid': 'Por favor ingrese un email válido',
+      'contact.form.validation.messageMin': 'El mensaje debe tener al menos 10 caracteres',
+      'contact.form.validation.messageMax': 'El mensaje no puede exceder 1000 caracteres',
+      'contact.location': 'Ubicación',
+      'contact.response': 'Tiempo de respuesta',
+      'contact.responseTime': 'Dentro de 24 horas',
+      
+      // WhatsApp
+      'whatsapp.label': 'Contactar por WhatsApp',
+      
+      // FAQ Section
+      'faq.title': 'Preguntas Frecuentes',
+      'faq.subtitle': 'Respuestas a las consultas más comunes sobre mis servicios de psicología forense',
+      'faq.question1': '¿Qué servicios de psicología forense ofrece?',
+      'faq.answer1': 'Ofrezco evaluación psicológica forense para procesos judiciales, metaperitajes psicológicos, participación como testigo experto en juicios orales, y evaluación psicológica en centros penitenciarios. Trabajo en jurisdicciones penal, penitenciaria, civil, laboral y administrativa.',
+      'faq.question2': '¿Dónde se encuentra ubicado?',
+      'faq.answer2': 'Mi consultorio está ubicado en Century Tower, Piso 19, Oficina 1920, Ciudad de Panamá, Panamá. También ofrezco servicios de teleperitaje psicológico para casos a nivel nacional.',
+      'faq.question3': '¿Cuánta experiencia tiene en psicología forense?',
+      'faq.answer3': 'Tengo más de 17 años de experiencia en Psicología Forense, con más de 4,000 evaluaciones psicológicas forenses realizadas. Fui coordinador de la Unidad de Psicología Forense del Instituto de Medicina Legal y Ciencias Forenses de Panamá.',
+      'faq.question4': '¿Qué jurisdicciones cubre en sus evaluaciones psicológicas forenses?',
+      'faq.answer4': 'Realizo evaluaciones psicológicas forenses para procesos judiciales en las siguientes jurisdicciones: Penal, Penitenciaria, Civil y Familia, Laboral y Social, Contencioso-administrativa, y Valoración del daño psicológico.',
+      'faq.question5': '¿Cuánto tiempo tarda una evaluación psicológica forense?',
+      'faq.answer5': 'El tiempo de una evaluación psicológica forense varía según la complejidad del caso. Generalmente, el proceso completo puede tomar entre 2 a 4 semanas desde la primera entrevista hasta la entrega del informe final. Para casos más complejos, puede extenderse según sea necesario.',
     },
     en: {
       // Navigation
@@ -145,6 +176,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       
       // About Section
       'about.title': 'About Me',
+      'about.background': 'Professional Background',
       'about.content': 'I am a clinical psychologist and qualified expert witness with more than 17 years of experience in Forensic Psychology, with a professional career that includes conducting more than 4,000 forensic psychological evaluations, intervention in high-profile cases and acting as an expert witness in multiple judicial hearings.',
       'about.content2': 'I served as coordinator of the Forensic Psychology Unit of the Institute of Legal Medicine and Forensic Sciences of Panama, I have been former president and am an active member of the Panamanian Association of Forensic Psychology, the Latin American Association of Legal and Forensic Psychology and the Ibero-American Association of Legal Psychology. I also work as a university professor and specialized consultant in forensic psychological evaluation.',
       'about.contributions': 'I have contributed to the technical strengthening of Forensic Psychology in Panama through my participation in national scope projects, including:',
@@ -153,6 +185,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       'about.contribution3': 'Drafting of the official Forensic Psychology procedure of the Institute of Legal Medicine and Forensic Sciences.',
       'about.contribution4': 'Author of the chapter Psychological injuries in the book Forensic Psychopathology: casebook (Manual Moderno Editorial).',
       'about.commitment': 'My professional practice is based on scientific rigor, professional ethics and permanent commitment to technical objectivity, providing specialized psychological analyses that support decision-making in the judicial and clinical fields.',
+      'about.commitmentTitle': 'Professional Commitment',
       
       // Experience Section
       'experience.title': 'Professional Experience',
@@ -195,6 +228,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       
       // Services Section
       'services.title': 'Services',
+      'services.subtitle': 'Specialized services in Forensic and Clinical Psychology for judicial processes and professional psychological evaluation.',
+      'services.jurisdictions': 'Jurisdictions',
       'services.forensic.title': 'Forensic psychological evaluation',
       'services.forensic.description': 'Technical evaluation for judicial processes in the following jurisdictions:',
       'services.forensic.1': 'Criminal',
@@ -226,6 +261,20 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       'contact.form.sending': 'Sending...',
       'contact.form.success': 'Message sent!',
       'contact.form.error': 'Error sending message. Please try again.',
+      
+      // FAQ Section
+      'faq.title': 'Frequently Asked Questions',
+      'faq.subtitle': 'Answers to the most common questions about my forensic psychology services',
+      'faq.question1': 'What forensic psychology services do you offer?',
+      'faq.answer1': 'I offer forensic psychological evaluation for judicial processes, psychological meta-expertise, participation as an expert witness in oral trials, and psychological evaluation in penitentiary centers. I work in criminal, penitentiary, civil, labor and administrative jurisdictions.',
+      'faq.question2': 'Where are you located?',
+      'faq.answer2': 'My office is located at Century Tower, Floor 19, Office 1920, Panama City, Panama. I also offer psychological tele-expertise services for cases nationwide.',
+      'faq.question3': 'How much experience do you have in forensic psychology?',
+      'faq.answer3': 'I have more than 17 years of experience in Forensic Psychology, with more than 4,000 forensic psychological evaluations performed. I was coordinator of the Forensic Psychology Unit of the Institute of Legal Medicine and Forensic Sciences of Panama.',
+      'faq.question4': 'What jurisdictions do you cover in your forensic psychological evaluations?',
+      'faq.answer4': 'I perform forensic psychological evaluations for judicial processes in the following jurisdictions: Criminal, Penitentiary, Civil and Family, Labor and Social, Administrative, and Psychological damage assessment.',
+      'faq.question5': 'How long does a forensic psychological evaluation take?',
+      'faq.answer5': 'The time for a forensic psychological evaluation varies according to the complexity of the case. Generally, the complete process can take between 2 to 4 weeks from the first interview to the delivery of the final report. For more complex cases, it may be extended as necessary.',
     },
   };
 

@@ -33,6 +33,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
                   src={arturoProfessionalImage}
                   alt="Arturo Suman, Psicólogo Forense y Clínico"
                   className="w-full rounded-xl shadow-lg object-cover aspect-[3/4]"
+                  loading="lazy"
                 />
                 <div className="absolute -top-2 sm:-top-3 -right-2 sm:-right-3 bg-gradient-to-r from-gentle-terracotta to-earth-clay text-white px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold shadow-xl">
                   <Award className="w-3 h-3 sm:w-4 sm:h-4 inline mr-1 sm:mr-2" />
@@ -50,7 +51,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
                   <div className="w-10 h-10 rounded-lg bg-gentle-terracotta/15 flex items-center justify-center">
                     <Users className="w-5 h-5 text-gentle-terracotta" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-cozy-brown">Professional Background</CardTitle>
+                  <CardTitle className="text-xl font-bold text-cozy-brown">{t('about.background')}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -111,7 +112,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
                 <div className="w-10 h-10 rounded-lg bg-earth-clay/15 flex items-center justify-center">
                   <Target className="w-5 h-5 text-earth-clay" />
                 </div>
-                <CardTitle className="text-xl font-bold text-cozy-brown">Professional Commitment</CardTitle>
+                <CardTitle className="text-xl font-bold text-cozy-brown">{t('about.commitmentTitle')}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
@@ -125,8 +126,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
         {/* CTA Button */}
         <div className="text-center">
           <Button 
-            size="lg" 
-            className="bg-earth-clay hover:bg-earth-clay/90 text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+            size="lg"
             onClick={() => {
               if (isHomePage) {
                 // If on home page, scroll to contact section

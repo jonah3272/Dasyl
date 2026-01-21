@@ -99,7 +99,6 @@ const Navigation = () => {
             ))}
             {onHome ? (
               <Button 
-                className="bg-earth-clay hover:bg-earth-clay/90 text-white font-bold px-6 py-2 rounded-lg transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
                 onClick={handleContactClick}
               >
                 {t("nav.book")}
@@ -107,7 +106,6 @@ const Navigation = () => {
             ) : (
               <Link to="/contacto">
                 <Button 
-                  className="bg-earth-clay hover:bg-earth-clay/90 text-white font-bold px-6 py-2 rounded-lg transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
                   onClick={handleContactClick}
                 >
                   {t("nav.book")}
@@ -127,7 +125,7 @@ const Navigation = () => {
           
           {/* Mobile menu button */}
           <button 
-            className="md:hidden text-primary p-2 rounded-lg hover:bg-primary/10 transition-all duration-300 transform hover:scale-105"
+            className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle navigation menu"
           >
@@ -137,7 +135,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-border/50 bg-white/95 backdrop-blur-md rounded-lg mx-2 animate-in slide-in-from-top duration-300">
+          <div className="md:hidden mt-4 py-4 border-t border-white/20 bg-cozy-brown/95 backdrop-blur-md rounded-lg mx-2 animate-in slide-in-from-top duration-300">
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <Link
@@ -166,7 +164,7 @@ const Navigation = () => {
                 </button>
                 {onHome ? (
                   <Button 
-                    className="w-full bg-earth-clay hover:bg-earth-clay/90 text-white font-bold py-3 rounded-lg transition-all duration-500 transform hover:scale-105"
+                    className="w-full"
                     onClick={handleContactClick}
                   >
                     {t("nav.book")}
@@ -174,7 +172,7 @@ const Navigation = () => {
                 ) : (
                   <Link to="/contacto" className="block">
                     <Button 
-                      className="w-full bg-earth-clay hover:bg-earth-clay/90 text-white font-bold py-3 rounded-lg transition-all duration-500 transform hover:scale-105"
+                      className="w-full"
                       onClick={handleContactClick}
                     >
                       {t("nav.book")}
@@ -191,7 +189,7 @@ const Navigation = () => {
       <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden">
         {onHome ? (
           <Button 
-            className="w-full bg-earth-clay hover:bg-earth-clay/90 text-white font-bold py-4 rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1"
+            className="w-full"
             onClick={handleContactClick}
           >
             {t("nav.book")}
@@ -199,7 +197,7 @@ const Navigation = () => {
         ) : (
           <Link to="/contacto" className="block">
             <Button 
-              className="w-full bg-earth-clay hover:bg-earth-clay/90 text-white font-bold py-4 rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1"
+              className="w-full"
               onClick={handleContactClick}
             >
               {t("nav.book")}
