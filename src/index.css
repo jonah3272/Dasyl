@@ -65,24 +65,24 @@ All colors MUST be HSL.
     --input: 24 33% 94%;
     --ring: 218 30% 26%;
 
-    /* Custom color palette matching the reference image - Dark professional theme */
-    --warm-cream: 38 15% 92%; /* Light beige for buttons and backgrounds */
-    --soft-sage: 38 20% 88%; /* Slightly darker beige */
-    --gentle-terracotta: 35 25% 65%; /* Medium beige/tan for primary buttons */
-    --cozy-brown: 0 0% 15%; /* Dark gray/black for headers and text */
+    /* Custom color palette - Professional beige/tan theme */
+    --warm-cream: 42 18% 94%; /* Light warm beige for backgrounds - #F5F2ED */
+    --soft-sage: 42 15% 90%; /* Slightly darker beige - #EDE8E0 */
+    --gentle-terracotta: 38 28% 68%; /* Medium warm tan - #D4C4B0 */
+    --cozy-brown: 0 0% 18%; /* Dark charcoal for headers - #2E2E2E */
     --forest-green: 140 40% 45%; /* Green for success states */
-    --sunset-peach: 38 15% 92%; /* Light beige */
-    --earth-clay: 35 30% 55%; /* Darker beige/tan for buttons */
-    --natural-beige: 38 12% 95%; /* Very light beige for backgrounds */
+    --sunset-peach: 42 18% 94%; /* Light beige - same as warm-cream */
+    --earth-clay: 36 32% 58%; /* Rich tan/beige for buttons - #B8A082 */
+    --natural-beige: 42 12% 96%; /* Very light beige for backgrounds - #F8F6F2 */
     
-    /* HIGH-CONTRAST ACTION COLORS - Beige/Tan theme */
-    --action-primary: 35 30% 55%; /* Darker beige/tan for primary buttons */
-    --action-primary-hover: 35 35% 50%; /* Darker for hover */
-    --action-primary-active: 35 40% 45%; /* Even darker for active */
+    /* HIGH-CONTRAST ACTION COLORS - Professional Beige/Tan theme */
+    --action-primary: 36 32% 58%; /* Rich tan/beige for primary buttons - #B8A082 */
+    --action-primary-hover: 36 35% 53%; /* Darker tan for hover - #A08F6F */
+    --action-primary-active: 36 38% 48%; /* Even darker for active - #8F7D5C */
     --action-primary-foreground: 0 0% 100%; /* White text */
-    --action-secondary: 38 15% 92%; /* Light beige for secondary buttons */
-    --action-secondary-hover: 38 20% 88%; /* Slightly darker for hover */
-    --action-secondary-foreground: 0 0% 15%; /* Dark text on light beige */
+    --action-secondary: 42 18% 94%; /* Light beige for secondary buttons - #F5F2ED */
+    --action-secondary-hover: 42 20% 90%; /* Slightly darker for hover - #EDE8E0 */
+    --action-secondary-foreground: 0 0% 18%; /* Dark text on light beige */
     
     /* Hero gradients with earth tones */
     --hero-gradient-start: 35 25% 96%;
