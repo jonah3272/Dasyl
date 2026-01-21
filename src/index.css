@@ -38,7 +38,7 @@ All colors MUST be HSL.
     
     /* WCAG AA Compliant navy, teal, beige, sky blue, and white palette */
     --background: 0 0% 100%; /* #FFFFFF - Pure white background */
-    --foreground: 218 30% 26%; /* #2F4156 - Navy for body text, high contrast */
+    --foreground: 0 0% 15%; /* Dark gray/black for body text */
 
     --card: 24 33% 94%; /* #F5EFEB - Beige for cards */
     --card-foreground: 218 30% 26%; /* #2F4156 - Navy text on beige */
@@ -46,8 +46,8 @@ All colors MUST be HSL.
     --popover: 24 33% 94%;
     --popover-foreground: 218 30% 26%;
 
-    --primary: 218 30% 26%; /* #2F4156 - Navy for headings, high contrast */
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 15%; /* Dark gray/black for headings and primary elements */
+    --primary-foreground: 0 0% 100%; /* White text on dark */
 
     --secondary: 206 35% 84%; /* #C8D9E6 - Sky blue */
     --secondary-foreground: 218 30% 26%; /* #2F4156 - Navy text on sky blue */
@@ -65,24 +65,24 @@ All colors MUST be HSL.
     --input: 24 33% 94%;
     --ring: 218 30% 26%;
 
-    /* Custom color palette matching the reference image */
-    --warm-cream: 24 33% 94%; /* #F5EFEB - Beige background */
-    --soft-sage: 206 35% 84%; /* #C8D9E6 - Sky blue for callouts */
-    --gentle-terracotta: 202 25% 45%; /* #567C8D - Teal */
-    --cozy-brown: 218 30% 26%; /* #2F4156 - Navy */
-    --forest-green: 202 25% 35%; /* Darker teal for success states */
-    --sunset-peach: 206 35% 84%; /* #C8D9E6 - Sky blue */
-    --earth-clay: 202 25% 50%; /* #567C8D - Medium teal */
-    --natural-beige: 24 33% 94%; /* #F5EFEB - Beige */
+    /* Custom color palette matching the reference image - Dark professional theme */
+    --warm-cream: 38 15% 92%; /* Light beige for buttons and backgrounds */
+    --soft-sage: 38 20% 88%; /* Slightly darker beige */
+    --gentle-terracotta: 35 25% 65%; /* Medium beige/tan for primary buttons */
+    --cozy-brown: 0 0% 15%; /* Dark gray/black for headers and text */
+    --forest-green: 140 40% 45%; /* Green for success states */
+    --sunset-peach: 38 15% 92%; /* Light beige */
+    --earth-clay: 35 30% 55%; /* Darker beige/tan for buttons */
+    --natural-beige: 38 12% 95%; /* Very light beige for backgrounds */
     
-    /* HIGH-CONTRAST ACTION COLORS - WCAG AA Compliant */
-    --action-primary: 218 30% 26%; /* #2F4156 - Navy, high contrast */
-    --action-primary-hover: 218 35% 22%; /* Darker navy for hover */
-    --action-primary-active: 218 40% 18%; /* Even darker for active */
-    --action-primary-foreground: 0 0% 100%; /* Pure white text */
-    --action-secondary: 202 25% 45%; /* #567C8D - Teal, good contrast */
-    --action-secondary-hover: 202 30% 40%; /* Darker teal for hover */
-    --action-secondary-foreground: 0 0% 100%;
+    /* HIGH-CONTRAST ACTION COLORS - Beige/Tan theme */
+    --action-primary: 35 30% 55%; /* Darker beige/tan for primary buttons */
+    --action-primary-hover: 35 35% 50%; /* Darker for hover */
+    --action-primary-active: 35 40% 45%; /* Even darker for active */
+    --action-primary-foreground: 0 0% 100%; /* White text */
+    --action-secondary: 38 15% 92%; /* Light beige for secondary buttons */
+    --action-secondary-hover: 38 20% 88%; /* Slightly darker for hover */
+    --action-secondary-foreground: 0 0% 15%; /* Dark text on light beige */
     
     /* Hero gradients with earth tones */
     --hero-gradient-start: 35 25% 96%;

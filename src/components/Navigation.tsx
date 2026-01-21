@@ -63,7 +63,7 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="fixed top-0 w-full z-50 px-4 sm:px-6 py-3 sm:py-4 bg-white/95 backdrop-blur-md border-b border-border/50 transition-all duration-300">
+      <nav className="fixed top-0 w-full z-50 px-4 sm:px-6 py-3 sm:py-4 bg-cozy-brown backdrop-blur-md border-b border-cozy-brown/50 transition-all duration-300">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link 
             to="/"
@@ -71,11 +71,11 @@ const Navigation = () => {
             className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity duration-300"
           >
             <img 
-              src="/Arturo-Suman_0000_Isotipo-Negro.png" 
-              alt="Arturo Suman Logo" 
+              src="/Arturo-Suman_0001_Isotipo-blanco.png" 
+              alt="Arturo Suman Logo"
               className="h-8 w-8 sm:h-10 sm:w-10 object-contain"
             />
-            <span className="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-primary truncate">
+            <span className="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-white truncate">
               <span className="hidden sm:inline">Arturo Suman</span>
               <span className="sm:hidden">A. Suman</span>
             </span>
@@ -90,8 +90,8 @@ const Navigation = () => {
                 onClick={(e) => handleNavClick(e, item.anchor)}
                 className={`font-medium px-3 py-2 rounded-md transition-all duration-500 nav-link text-sm lg:text-base transform hover:scale-105 hover:-translate-y-0.5 ${
                   pathname === item.href || pathname === item.englishHref
-                    ? 'text-primary bg-primary/10 shadow-lg' 
-                    : 'text-foreground hover:text-primary hover:bg-primary/5'
+                    ? 'text-white bg-white/20 shadow-lg' 
+                    : 'text-white/80 hover:text-white hover:bg-white/10'
                 }`}
               >
                 {item.name}
@@ -99,7 +99,7 @@ const Navigation = () => {
             ))}
             {onHome ? (
               <Button 
-                className="bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-6 py-2 rounded-lg transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
+                className="bg-earth-clay hover:bg-earth-clay/90 text-white font-bold px-6 py-2 rounded-lg transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
                 onClick={handleContactClick}
               >
                 {t("nav.book")}
@@ -107,22 +107,22 @@ const Navigation = () => {
             ) : (
               <Link to="/contacto">
                 <Button 
-                  className="bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-6 py-2 rounded-lg transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
+                  className="bg-earth-clay hover:bg-earth-clay/90 text-white font-bold px-6 py-2 rounded-lg transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
                   onClick={handleContactClick}
                 >
                   {t("nav.book")}
                 </Button>
               </Link>
             )}
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-primary/10 transition-all duration-300 border border-primary/20"
-              aria-label="Toggle language"
-              title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
-            >
-              <Languages className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">{language === 'es' ? 'EN' : 'ES'}</span>
-            </button>
+                        <button
+                          onClick={toggleLanguage}
+                          className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-300 border border-white/20"
+                          aria-label="Toggle language"
+                          title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+                        >
+                          <Languages className="w-4 h-4 text-white" />
+                          <span className="text-sm font-medium text-white">{language === 'es' ? 'EN' : 'ES'}</span>
+                        </button>
           </div>
           
           {/* Mobile menu button */}
@@ -144,10 +144,10 @@ const Navigation = () => {
                   key={item.name}
                   to={item.href}
                   onClick={(e) => handleNavClick(e, item.anchor)}
-                  className={`font-medium px-4 py-3 text-left rounded-md transition-all duration-500 hover:bg-primary/5 text-base transform hover:translate-x-2 ${
+                  className={`font-medium px-4 py-3 text-left rounded-md transition-all duration-500 hover:bg-white/10 text-base transform hover:translate-x-2 ${
                     pathname === item.href || pathname === item.englishHref
-                      ? 'text-primary bg-primary/10 shadow-md'
-                      : 'text-foreground hover:text-primary'
+                      ? 'text-white bg-white/20 shadow-md'
+                      : 'text-white/80 hover:text-white'
                   }`}
                 >
                   {item.name}
@@ -166,7 +166,7 @@ const Navigation = () => {
                 </button>
                 {onHome ? (
                   <Button 
-                    className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-3 rounded-lg transition-all duration-500 transform hover:scale-105"
+                    className="w-full bg-earth-clay hover:bg-earth-clay/90 text-white font-bold py-3 rounded-lg transition-all duration-500 transform hover:scale-105"
                     onClick={handleContactClick}
                   >
                     {t("nav.book")}
@@ -174,7 +174,7 @@ const Navigation = () => {
                 ) : (
                   <Link to="/contacto" className="block">
                     <Button 
-                      className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-3 rounded-lg transition-all duration-500 transform hover:scale-105"
+                      className="w-full bg-earth-clay hover:bg-earth-clay/90 text-white font-bold py-3 rounded-lg transition-all duration-500 transform hover:scale-105"
                       onClick={handleContactClick}
                     >
                       {t("nav.book")}
@@ -191,7 +191,7 @@ const Navigation = () => {
       <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden">
         {onHome ? (
           <Button 
-            className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-4 rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1"
+            className="w-full bg-earth-clay hover:bg-earth-clay/90 text-white font-bold py-4 rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1"
             onClick={handleContactClick}
           >
             {t("nav.book")}
@@ -199,7 +199,7 @@ const Navigation = () => {
         ) : (
           <Link to="/contacto" className="block">
             <Button 
-              className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-4 rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1"
+              className="w-full bg-earth-clay hover:bg-earth-clay/90 text-white font-bold py-4 rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1"
               onClick={handleContactClick}
             >
               {t("nav.book")}

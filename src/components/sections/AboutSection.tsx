@@ -80,21 +80,21 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <ul className="space-y-3 text-base sm:text-lg text-cozy-brown/80 leading-relaxed list-none">
                   <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-gentle-terracotta"></span>
+                    <span className="flex-shrink-0 w-2 h-2 rounded-full mt-2.5" style={{ backgroundColor: `hsl(var(--gentle-terracotta))` }}></span>
                     <span className="flex-1">{t('about.contribution1')}</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-gentle-terracotta"></span>
+                    <span className="flex-shrink-0 w-2 h-2 rounded-full mt-2.5" style={{ backgroundColor: `hsl(var(--gentle-terracotta))` }}></span>
                     <span className="flex-1">{t('about.contribution2')}</span>
                   </li>
                 </ul>
                 <ul className="space-y-3 text-base sm:text-lg text-cozy-brown/80 leading-relaxed list-none">
                   <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-gentle-terracotta"></span>
+                    <span className="flex-shrink-0 w-2 h-2 rounded-full mt-2.5" style={{ backgroundColor: `hsl(var(--gentle-terracotta))` }}></span>
                     <span className="flex-1">{t('about.contribution3')}</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-gentle-terracotta"></span>
+                    <span className="flex-shrink-0 w-2 h-2 rounded-full mt-2.5" style={{ backgroundColor: `hsl(var(--gentle-terracotta))` }}></span>
                     <span className="flex-1">{t('about.contribution4')}</span>
                   </li>
                 </ul>
@@ -126,7 +126,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
         <div className="text-center">
           <Button 
             size="lg" 
-            className="bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+            className="bg-earth-clay hover:bg-earth-clay/90 text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
             onClick={() => {
               if (isHomePage) {
                 // If on home page, scroll to contact section

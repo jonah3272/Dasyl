@@ -61,7 +61,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-3">
               <Button
                 size="lg"
-                className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white border-0 font-bold text-sm sm:text-base px-8 sm:px-10 py-3 sm:py-4 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105"
+                className="group relative overflow-hidden bg-earth-clay hover:bg-earth-clay/90 text-white border-0 font-bold text-sm sm:text-base px-8 sm:px-10 py-3 sm:py-4 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   if (contactSection) {

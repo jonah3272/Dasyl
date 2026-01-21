@@ -167,7 +167,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
               <Button 
                 type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-earth-clay hover:bg-earth-clay/90 text-white font-bold py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center justify-center">
