@@ -10,14 +10,11 @@ export default function ExperienceSection({ withId = true }: { withId?: boolean 
       <div className="absolute inset-0 bg-gradient-to-tr from-gentle-terracotta/5 to-transparent"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-cozy-brown/10 to-gentle-terracotta/10 px-3 sm:px-4 py-2 rounded-full mb-6">
-          <div className="w-2 h-2 bg-gradient-to-r from-gentle-terracotta to-earth-clay rounded-full"></div>
-          <span className="text-xs sm:text-sm font-semibold text-cozy-brown uppercase tracking-wider">{t('experience.title')}</span>
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
+            {t('experience.title')}
+          </h2>
         </div>
-
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-8 sm:mb-12">
-          {t('experience.title')}
-        </h2>
 
         <div className="space-y-6 sm:space-y-8">
           {/* Private Practice */}

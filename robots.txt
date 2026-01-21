@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://resilientmindcounseling.info/sitemap.xml
-Allow: /
-Sitemap: https://resilientmindcounseling.info/sitemap.xml
+Sitemap: https://arturosuman.com/sitemap.xml

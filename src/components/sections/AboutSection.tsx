@@ -143,7 +143,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
                 }
               } else {
                 // If on other pages, navigate to contact page
-                navigate('/contact');
+                navigate('/contacto');
               }
             }}
           >

@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import SetHeaderVar from "./components/SetHeaderVar";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -22,11 +23,17 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <div className="min-h-screen">
             <SetHeaderVar />
             <Navigation />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/sobre-mi" element={<About />} />
+              <Route path="/servicios" element={<Services />} />
+              <Route path="/experiencia" element={<Experience />} />
+              <Route path="/contacto" element={<Contact />} />
+              {/* English routes for language toggle compatibility */}
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/experience" element={<Experience />} />

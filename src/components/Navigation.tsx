@@ -11,9 +11,9 @@ const Navigation = () => {
   const onHome = pathname === "/";
 
   const navItems = [
-    { name: t("nav.about"), href: "/about", anchor: "about" },
-    { name: t("nav.services"), href: "/services", anchor: null },
-    { name: t("nav.experience"), href: "/experience", anchor: null }
+    { name: t("nav.about"), href: "/sobre-mi", anchor: "about", englishHref: "/about" },
+    { name: t("nav.services"), href: "/servicios", anchor: null, englishHref: "/services" },
+    { name: t("nav.experience"), href: "/experiencia", anchor: null, englishHref: "/experience" }
   ];
 
   const toggleLanguage = () => {
@@ -89,7 +89,7 @@ const Navigation = () => {
                 to={item.href}
                 onClick={(e) => handleNavClick(e, item.anchor)}
                 className={`font-medium px-3 py-2 rounded-md transition-all duration-500 nav-link text-sm lg:text-base transform hover:scale-105 hover:-translate-y-0.5 ${
-                  pathname === item.href
+                  pathname === item.href || pathname === item.englishHref
                     ? 'text-primary bg-primary/10 shadow-lg' 
                     : 'text-foreground hover:text-primary hover:bg-primary/5'
                 }`}
@@ -105,7 +105,7 @@ const Navigation = () => {
                 {t("nav.book")}
               </Button>
             ) : (
-              <Link to="/contact">
+              <Link to="/contacto">
                 <Button 
                   className="bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-6 py-2 rounded-lg transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
                   onClick={handleContactClick}
@@ -145,7 +145,7 @@ const Navigation = () => {
                   to={item.href}
                   onClick={(e) => handleNavClick(e, item.anchor)}
                   className={`font-medium px-4 py-3 text-left rounded-md transition-all duration-500 hover:bg-primary/5 text-base transform hover:translate-x-2 ${
-                    pathname === item.href
+                    pathname === item.href || pathname === item.englishHref
                       ? 'text-primary bg-primary/10 shadow-md'
                       : 'text-foreground hover:text-primary'
                   }`}
@@ -172,7 +172,7 @@ const Navigation = () => {
                     {t("nav.book")}
                   </Button>
                 ) : (
-                  <Link to="/contact" className="block">
+                  <Link to="/contacto" className="block">
                     <Button 
                       className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-3 rounded-lg transition-all duration-500 transform hover:scale-105"
                       onClick={handleContactClick}
@@ -197,7 +197,7 @@ const Navigation = () => {
             {t("nav.book")}
           </Button>
         ) : (
-          <Link to="/contact" className="block">
+          <Link to="/contacto" className="block">
             <Button 
               className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-4 rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1"
               onClick={handleContactClick}

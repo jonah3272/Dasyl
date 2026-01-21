@@ -9,10 +9,10 @@ interface SEOHeadProps {
 }
 
 const SEOHead = ({ 
-  title = "Zach Rehbein-Jones, LCSW | Virtual Therapy in Wisconsin & California | Online Anxiety & Depression Help",
-  description = "Licensed virtual therapy in Wisconsin & California. Expert online help for anxiety, depression, trauma, and relationships. HIPAA-secure sessions with sports psychology expertise.",
-  keywords = "Wisconsin virtual therapy, California online therapy, anxiety help online, depression therapy virtual, online therapist Wisconsin, virtual counseling California, LCSW telehealth, sports psychology therapy",
-  canonicalUrl = "https://zachrehbeinjones.com",
+  title = "Arturo Suman | Psicólogo Forense y Clínico en Ciudad de Panamá, Panamá | Evaluación Psicológica Forense",
+  description = "Arturo Suman, psicólogo forense y clínico en Ciudad de Panamá, Panamá. Más de 17 años de experiencia, más de 4,000 evaluaciones psicológicas forenses. Consultoría especializada en Psicología Forense y Clínica. Consultorio en Century Tower.",
+  keywords = "psicólogo forense Panamá, psicólogo forense Ciudad de Panamá, psicólogo clínico Panamá, evaluación psicológica forense Panamá, peritaje psicológico Panamá, psicología forense Ciudad de Panamá, Arturo Suman, metaperitaje psicológico Panamá, testimonio experto Panamá, perito psicológico Ciudad de Panamá",
+  canonicalUrl = "https://arturosuman.com",
   type = "website"
 }: SEOHeadProps) => {
   return (
@@ -38,41 +38,47 @@ const SEOHead = ({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "MedicalBusiness",
-          "name": "Zach Rehbein-Jones, LCSW",
-          "description": "Licensed Clinical Social Worker providing virtual therapy services",
+          "name": "Arturo Suman",
+          "description": "Psicólogo forense y clínico en Ciudad de Panamá, Panamá, con más de 17 años de experiencia en Psicología Forense. Más de 4,000 evaluaciones psicológicas forenses realizadas.",
           "url": canonicalUrl,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ciudad de Panamá",
+            "addressRegion": "Panamá",
+            "addressCountry": "PA",
+            "streetAddress": "Century Tower, Piso 19, Oficina 1920"
+          },
           "areaServed": [
             {
-              "@type": "State",
-              "name": "Wisconsin"
+              "@type": "City",
+              "name": "Ciudad de Panamá"
             },
             {
-              "@type": "State", 
-              "name": "California"
+              "@type": "Country", 
+              "name": "Panamá"
             }
           ],
           "serviceType": [
-            "Virtual Therapy",
-            "Online Counseling", 
-            "Anxiety Treatment",
-            "Depression Therapy",
-            "Trauma Therapy",
-            "Relationship Counseling"
+            "Evaluación Psicológica Forense",
+            "Metaperitaje Psicológico",
+            "Testimonio Experto",
+            "Psicología Forense",
+            "Psicología Clínica"
           ],
-          "hasCredential": "Licensed Clinical Social Worker (LCSW)",
-          "medicalSpecialty": "Mental Health",
+          "hasCredential": "Psicólogo Clínico y Perito Idóneo",
+          "medicalSpecialty": "Psicología Forense y Clínica",
           "availableService": [
             {
               "@type": "MedicalTherapy",
-              "name": "Cognitive Behavioral Therapy"
+              "name": "Evaluación Psicológica Forense"
             },
             {
               "@type": "MedicalTherapy", 
-              "name": "Dialectical Behavior Therapy"
+              "name": "Metaperitaje Psicológico"
             },
             {
               "@type": "MedicalTherapy",
-              "name": "Mindfulness-Based Therapy" 
+              "name": "Testimonio Experto" 
             }
           ]
         })}
