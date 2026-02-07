@@ -1,29 +1,29 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Trophy, Coffee, Heart, Zap, Target, Users, MessageSquare } from "lucide-react";
-import zachMarathonImage from "@/assets/zach-marathon-training.jpg";
+import marathonImage from "@/assets/zach-marathon-training.jpg";
 import milwaukeeSportsImage from "@/assets/milwaukee-sports-coffee.jpg";
 import medalsImage from "@/assets/medals-and-achievements.jpg";
 
-const MeetZachPersonalSection = () => {
+const PersonalSection = () => {
   const personalFacts = [
     {
       icon: Trophy,
       question: "What's your favorite marathon?",
-      answer: "Boston 2019 - ran it in a snowstorm and learned that sometimes the toughest conditions create the most meaningful victories.",
-      connection: "Just like therapy: breakthrough moments often happen when we push through the hard stuff."
+      answer: "We believe the toughest conditions can create the most meaningful victories. Breakthrough moments often happen when we push through the hard stuff.",
+      connection: "Progress in therapy works the same way: small steps through difficulty lead to real change."
     },
     {
       icon: Coffee,
-      question: "Milwaukee sports fan?",
-      answer: "Brewers, Bucks, Packers - I bleed blue and gold! Love the community spirit and how teams bounce back from losses.",
-      connection: "Sports taught me that resilience isn't about being perfect - it's about showing up consistently."
+      question: "What matters to your practice?",
+      answer: "Community spirit and how people bounce back from setbacks. We believe in showing up consistently for our clients.",
+      connection: "Resilience isn't about being perfect—it's about showing up consistently."
     },
     {
       icon: Target,
       question: "What drives your approach to growth?",
-      answer: "Same thing that gets me up at 5 AM for long runs - the belief that small, consistent actions create massive change.",
-      connection: "Whether it's mile markers or therapy goals, progress happens one step at a time."
+      answer: "The belief that small, consistent actions create lasting change. We focus on steady progress.",
+      connection: "Whether in goals or daily life, progress happens one step at a time."
     }
   ];
 
@@ -32,19 +32,19 @@ const MeetZachPersonalSection = () => {
       icon: Zap,
       passion: "Running",
       therapeutic: "Mental endurance training",
-      description: "I help clients build the same stamina for life's challenges that I've developed for 26.2 miles."
+      description: "We help clients build stamina for life's challenges through consistent, supportive work."
     },
     {
       icon: Users,
       passion: "Team Sports",
       therapeutic: "Collaborative healing",
-      description: "Like a good coach, I'm in your corner - pushing you forward while respecting your pace."
+      description: "We're in your corner—pushing you forward while respecting your pace."
     },
     {
       icon: Heart,
       passion: "Personal Growth",
       therapeutic: "Authentic connection",
-      description: "I share my own journey because real growth happens when we drop the masks and get honest."
+      description: "Real growth happens when we drop the masks and get honest together."
     }
   ];
 
@@ -58,10 +58,10 @@ const MeetZachPersonalSection = () => {
             Beyond the License
           </Badge>
           <h2 className="text-4xl lg:text-5xl font-heading font-bold text-cozy-brown mb-6">
-            Meet Zach Beyond the Therapy Room
+            Meet Us Beyond the Office
           </h2>
           <p className="text-xl text-earth-clay max-w-3xl mx-auto">
-            The person behind the professional - and how my passions shape the way I help you heal.
+            The people behind the practice—and how our values shape the way we support you.
           </p>
         </div>
 
@@ -72,8 +72,10 @@ const MeetZachPersonalSection = () => {
             <Card className="overflow-hidden shadow-2xl border-natural-beige">
               <div className="relative h-64 lg:h-80">
                 <img 
-                  src={zachMarathonImage} 
-                  alt="Zach running during marathon training at sunrise, showing his dedication to personal growth and endurance"
+                  src={marathonImage} 
+                  alt="Dedication to personal growth and endurance"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-cozy-brown/60 to-transparent"></div>
@@ -82,7 +84,7 @@ const MeetZachPersonalSection = () => {
                     "Every mile teaches you something about yourself"
                   </h3>
                   <p className="text-warm-cream/90">
-                    26 marathons and counting - each one a lesson in perseverance that I bring to our sessions.
+                    We bring the same perseverance and commitment to every session.
                   </p>
                 </div>
               </div>
@@ -125,17 +127,19 @@ const MeetZachPersonalSection = () => {
               <div className="text-center">
                 <img 
                   src={milwaukeeSportsImage} 
-                  alt="Milwaukee Brewers cap next to coffee and therapy journal, showing Zach's love for local sports"
+                  alt="Professional space and reflection"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-40 object-cover rounded-lg mb-4"
                 />
                 <h4 className="font-heading font-bold text-cozy-brown mb-2">
-                  Milwaukee Born & Raised
+                  Panama City Based
                 </h4>
                 <p className="text-earth-clay text-sm mb-3">
-                  Brewers tailgates, Bucks games, and Packers Sundays - community and loyalty run deep here.
+                  Rooted in Panama City—community and commitment to our clients run deep here.
                 </p>
                 <Badge variant="outline" className="bg-forest-green/10 border-forest-green/30 text-forest-green">
-                  🧀 Cheese & Therapy
+                  Local & Professional
                 </Badge>
               </div>
             </Card>
@@ -143,7 +147,7 @@ const MeetZachPersonalSection = () => {
             {/* Passion-Therapy Connections */}
             <Card className="p-6">
               <h4 className="font-heading font-bold text-cozy-brown mb-4 text-center">
-                How My Passions Inform My Practice
+                How Our Values Inform Our Practice
               </h4>
               <div className="space-y-4">
                 {passionConnections.map((connection, index) => {
@@ -179,4 +183,4 @@ const MeetZachPersonalSection = () => {
   );
 };
 
-export default MeetZachPersonalSection;
+export default PersonalSection;

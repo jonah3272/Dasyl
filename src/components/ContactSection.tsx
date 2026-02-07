@@ -5,7 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Clock, Send, Calendar } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, Calendar, MessageCircle } from "lucide-react";
+
+const WHATSAPP_NUMBER = "50765509216";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola, me gustaría agendar una consulta.")}`;
 
 const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -58,7 +61,7 @@ const ContactSection = () => {
             <span className="block text-gentle-terracotta">Let's Connect.</span>
           </h2>
           <p className="text-base sm:text-lg text-cozy-brown/80 max-w-4xl mx-auto">
-            Book your free 15-minute consultation to discover how Zach's clear, honest therapy can guide you toward meaningful progress.
+            Book your free 15-minute consultation to discover how we can guide you toward meaningful progress.
           </p>
         </div>
         
@@ -214,34 +217,46 @@ const ContactSection = () => {
               </CardHeader>
               <CardContent className="pt-0 space-y-3">
                 <a 
-                  href="mailto:zach@resilientmindcounseling.info" 
+                  href="mailto:psic.suman@gmail.com" 
                   className="flex items-center gap-3 p-2 bg-cozy-brown/5 rounded-lg hover:bg-cozy-brown/10 transition-colors duration-200 cursor-pointer group"
                 >
                   <Mail className="w-4 h-4 text-cozy-brown/70 group-hover:text-cozy-brown transition-colors duration-200" />
                   <div>
                     <p className="font-medium text-cozy-brown text-sm group-hover:text-cozy-brown/90">Email</p>
                     <p className="text-xs text-cozy-brown/70 group-hover:text-cozy-brown">
-                      zach@resilientmindcounseling.info
+                      psic.suman@gmail.com
                     </p>
                   </div>
                 </a>
                 <a 
-                  href="tel:+14143480996" 
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-2 bg-[#25D366]/10 rounded-lg hover:bg-[#25D366]/20 transition-all duration-200 cursor-pointer group border border-[#25D366]/20"
+                  aria-label="Contactar por WhatsApp"
+                >
+                  <MessageCircle className="w-4 h-4 text-[#25D366] group-hover:scale-110 transition-transform duration-200" />
+                  <div>
+                    <p className="font-medium text-cozy-brown text-sm group-hover:text-cozy-brown/90">WhatsApp</p>
+                    <p className="text-xs text-cozy-brown/70 group-hover:text-cozy-brown">(507) 655-09216 — Tap to chat</p>
+                  </div>
+                </a>
+                <a 
+                  href="tel:+50765509216" 
                   className="flex items-center gap-3 p-2 bg-cozy-brown/5 rounded-lg hover:bg-cozy-brown/10 transition-colors duration-200 cursor-pointer group"
+                  aria-label="Llamar por teléfono"
                 >
                   <Phone className="w-4 h-4 text-cozy-brown/70 group-hover:text-cozy-brown transition-colors duration-200" />
                   <div>
                     <p className="font-medium text-cozy-brown text-sm group-hover:text-cozy-brown/90">Phone</p>
-                    <p className="text-xs text-cozy-brown/70 group-hover:text-cozy-brown">
-                      (414) 348-0996
-                    </p>
+                    <p className="text-xs text-cozy-brown/70 group-hover:text-cozy-brown">(507) 655-09216</p>
                   </div>
                 </a>
                 <div className="flex items-center gap-3 p-2 bg-gentle-terracotta/5 rounded-lg">
                   <MapPin className="w-4 h-4 text-gentle-terracotta/70" />
                   <div>
-                    <p className="font-medium text-cozy-brown text-sm">Serving</p>
-                    <p className="text-xs text-cozy-brown/70">California & Wisconsin</p>
+                    <p className="font-medium text-cozy-brown text-sm">Office</p>
+                    <p className="text-xs text-cozy-brown/70">Psilegconsultants, Century Tower, Piso 19, Oficina 1920, Panama City, Panama</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 p-2 bg-earth-clay/5 rounded-lg">
@@ -264,7 +279,7 @@ const ContactSection = () => {
                   <p className="text-xs font-semibold text-gentle-terracotta uppercase tracking-wider mb-1">What We'll Cover</p>
                   <ul className="text-xs text-cozy-brown/80 space-y-1">
                     <li>• Your current challenges</li>
-                    <li>• How I can help</li>
+                    <li>• How we can help</li>
                     <li>• Next steps together</li>
                   </ul>
                 </div>

@@ -10,14 +10,14 @@ const CTASection = ({ variant = "primary", className = "" }: CTASectionProps) =>
 const ctaConfig = {
     primary: {
       title: "📅 Book Your Free Consultation",
-      subtitle: "15 minutes to see if Zach's approach clicks with you. Zero pressure, total clarity.",
+      subtitle: "15 minutes to see if we're a good fit. Zero pressure, total clarity.",
       buttonText: "Secure Your Free 15-Min Call",
       buttonIcon: Calendar,
       bgGradient: "from-gentle-terracotta to-earth-clay",
       textColor: "text-warm-cream"
     },
     secondary: {
-      title: "See If Zach Is a Good Fit",
+      title: "See If We're a Good Fit",
       subtitle: "Real breakthrough requires the right therapist. Let's find out if that's me.",
       buttonText: "Check Availability Now",
       buttonIcon: MessageCircle,

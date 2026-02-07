@@ -6,10 +6,10 @@ export default function Approach() {
   return (
     <main>
       <Helmet>
-        <title>Therapy approach | CBT, EMDR informed, mindfulness | Resilient Mind Counseling</title>
+        <title>Therapy approach | CBT, EMDR informed, mindfulness | Psilegconsultants</title>
         <meta
           name="description"
-          content="How we work. Collaborative goals, evidence-based methods, telehealth for Wisconsin and California."
+          content="How we work. Collaborative goals, evidence-based methods. Serving Panama City, Panama."
         />
         <link rel="canonical" href="https://resilientmindcounseling.info/approach/" />
       </Helmet>

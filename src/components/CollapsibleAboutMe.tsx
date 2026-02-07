@@ -14,8 +14,8 @@ const CollapsibleAboutMe = ({ className = "" }: CollapsibleAboutMeProps) => {
 
   const credentials = [
     {
-      title: "Licensed Clinical Social Worker (LCSW)",
-      subtitle: "Wisconsin & California State Licensed"
+      title: "Licensed Professional",
+      subtitle: "Panama City, Panama"
     },
     {
       title: "Specialized Training in Trauma-Informed Care", 

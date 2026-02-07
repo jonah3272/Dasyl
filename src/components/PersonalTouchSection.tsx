@@ -42,7 +42,7 @@ const PersonalTouchSection = () => {
           <div className="mt-8 grid grid-cols-1 gap-4 text-center">
             <div className="p-4">
               <MapPin className="w-6 h-6 text-action-primary mx-auto mb-2" />
-              <p className="text-sm font-medium text-foreground">Wisconsin & California</p>
+              <p className="text-sm font-medium text-foreground">Panama City, Panama</p>
               <p className="text-xs text-muted-foreground">Midwest heart, West Coast licensed</p>
             </div>
             

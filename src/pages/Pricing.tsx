@@ -5,8 +5,8 @@ export default function Pricing() {
   return (
     <main>
       <Helmet>
-        <title>Therapy pricing | Sliding scale and superbills | Resilient Mind Counseling</title>
-        <meta name="description" content="Session rates, sliding scale, and out of network superbills. Transparent pricing for online therapy in Wisconsin and California." />
+        <title>Therapy pricing | Sliding scale and superbills | Psilegconsultants</title>
+        <meta name="description" content="Session rates, sliding scale, and out of network superbills. Transparent pricing for services in Panama City, Panama." />
         <link rel="canonical" href="https://resilientmindcounseling.info/pricing/" />
       </Helmet>
       <div className="page page--pricing">

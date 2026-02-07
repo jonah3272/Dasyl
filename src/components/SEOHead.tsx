@@ -9,10 +9,10 @@ interface SEOHeadProps {
 }
 
 const SEOHead = ({ 
-  title = "Zach Rehbein-Jones, LCSW | Virtual Therapy in Wisconsin & California | Online Anxiety & Depression Help",
-  description = "Licensed virtual therapy in Wisconsin & California. Expert online help for anxiety, depression, trauma, and relationships. HIPAA-secure sessions with sports psychology expertise.",
-  keywords = "Wisconsin virtual therapy, California online therapy, anxiety help online, depression therapy virtual, online therapist Wisconsin, virtual counseling California, LCSW telehealth, sports psychology therapy",
-  canonicalUrl = "https://zachrehbeinjones.com",
+  title = "Psilegconsultants | Professional Services in Panama City, Panama",
+  description = "Professional services in Panama City, Panama. Expert support for anxiety, depression, trauma, and relationships.",
+  keywords = "Panama City therapy, Panama counseling, anxiety help Panama, depression therapy Panama, professional services Panama City",
+  canonicalUrl = "https://resilientmindcounseling.info",
   type = "website"
 }: SEOHeadProps) => {
   return (
@@ -38,17 +38,17 @@ const SEOHead = ({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "MedicalBusiness",
-          "name": "Zach Rehbein-Jones, LCSW",
-          "description": "Licensed Clinical Social Worker providing virtual therapy services",
+          "name": "Psilegconsultants",
+          "description": "Professional services in Panama City, Panama",
           "url": canonicalUrl,
           "areaServed": [
             {
-              "@type": "State",
-              "name": "Wisconsin"
+              "@type": "City",
+              "name": "Panama City"
             },
             {
-              "@type": "State", 
-              "name": "California"
+              "@type": "Country", 
+              "name": "Panama"
             }
           ],
           "serviceType": [
@@ -59,7 +59,7 @@ const SEOHead = ({
             "Trauma Therapy",
             "Relationship Counseling"
           ],
-          "hasCredential": "Licensed Clinical Social Worker (LCSW)",
+          "hasCredential": "Licensed Professional",
           "medicalSpecialty": "Mental Health",
           "availableService": [
             {

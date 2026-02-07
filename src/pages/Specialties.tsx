@@ -5,8 +5,8 @@ export default function Specialties() {
   return (
     <main>
       <Helmet>
-        <title>Therapy specialties in Wisconsin and California | Resilient Mind Counseling</title>
-        <meta name="description" content="Anxiety therapy, trauma therapy, and couples counseling by telehealth. Serving Wisconsin and California." />
+        <title>Therapy specialties | Psilegconsultants | Panama City, Panama</title>
+        <meta name="description" content="Anxiety therapy, trauma therapy, and couples counseling. Serving Panama City, Panama." />
         <link rel="canonical" href="https://resilientmindcounseling.info/specialties/" />
       </Helmet>
       <div className="page page--specialties">

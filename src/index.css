@@ -7,9 +7,29 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Additional smooth scroll enhancement for better performance */
-* {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: reduce) {
+  html, * {
+    scroll-behavior: auto;
+  }
+  .page-transition {
+    animation: none !important;
+  }
+}
+
+/* Page transition: subtle fade-in on route change */
+.page-transition {
+  animation: pageFadeIn 0.35s ease-out;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 

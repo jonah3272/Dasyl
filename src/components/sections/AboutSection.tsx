@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Award } from "lucide-react";
-const zachProfessionalImage = "/lovable-uploads/62dfc03a-96b9-4f6c-821e-c327b9b4a5d6.png";
+import { useLanguage } from "@/contexts/LanguageContext";
+const professionalImage = "/lovable-uploads/62dfc03a-96b9-4f6c-821e-c327b9b4a5d6.png";
 
 export default function AboutSection({ withId = true }: { withId?: boolean }) {
+  const { t } = useLanguage();
   return (
     <section id={withId ? "about" : undefined} className="pt-6 pb-12 sm:pt-8 sm:pb-16 lg:pt-12 lg:pb-24 bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/20 relative overflow-hidden">
       {/* Background Decorative Elements */}
@@ -23,20 +25,22 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
 
               <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-2 shadow-2xl">
                 <img
-                  src={zachProfessionalImage}
-                  alt="Zach Rehbein-Jones, Licensed Clinical Social Worker"
+                  src={professionalImage}
+                  alt={t("about.imageAlt")}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full rounded-xl shadow-lg object-cover aspect-[3/4]"
                 />
 
                 {/* Enhanced License Badge */}
                 <div className="absolute -top-2 sm:-top-3 -right-2 sm:-right-3 bg-gradient-to-r from-gentle-terracotta to-earth-clay text-white px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold shadow-xl">
                   <Award className="w-3 h-3 sm:w-4 sm:h-4 inline mr-1 sm:mr-2" />
-                  Licensed LCSW
+                  {t("hero.badgePro")}
                 </div>
 
                 {/* Trust indicator */}
                 <div className="absolute -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 bg-white/95 backdrop-blur-sm px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl shadow-lg border border-soft-sage/20">
-                  <span className="text-xs font-medium text-cozy-brown">WI & CA Licensed</span>
+                  <span className="text-xs font-medium text-cozy-brown">{t("about.trust")}</span>
                 </div>
               </div>
             </div>
@@ -47,23 +51,23 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
             {/* Section Label */}
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-cozy-brown/10 to-gentle-terracotta/10 px-3 sm:px-4 py-2 rounded-full">
               <div className="w-2 h-2 bg-gradient-to-r from-gentle-terracotta to-earth-clay rounded-full"></div>
-              <span className="text-xs sm:text-sm font-semibold text-cozy-brown uppercase tracking-wider">About Your Therapist</span>
+              <span className="text-xs sm:text-sm font-semibold text-cozy-brown uppercase tracking-wider">{t("about.label")}</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-cozy-brown leading-tight">
-              You Deserve a Therapist Who
-              <span className="block text-gentle-terracotta">Understands and Supports You</span>
+              {t("about.title1")}
+              <span className="block text-gentle-terracotta">{t("about.title2")}</span>
             </h1>
 
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-soft-sage/20 shadow-lg">
               <p className="text-base sm:text-lg lg:text-xl text-cozy-brown/90 leading-relaxed">
-                I am a Licensed Clinical Social Worker licensed in California and Wisconsin who knows seeking therapy takes courage. You want more than credentials. You want a compassionate, judgment-free space where your unique experiences are understood.
+                {t("about.desc")}
               </p>
             </div>
 
             <div className="bg-gradient-to-r from-gentle-terracotta/10 to-earth-clay/10 rounded-2xl p-4 sm:p-6 border border-gentle-terracotta/20">
               <p className="text-base sm:text-lg text-cozy-brown/80 leading-relaxed">
-                Whether facing anxiety, depression, life transitions, or relationship challenges, I combine clinical expertise with genuine care to guide your healing journey. Outside sessions, I am a Bucks fan and runner. Together we will build an authentic connection that supports your growth.
+                {t("about.desc2")}
               </p>
             </div>
 
@@ -86,7 +90,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
                   }
                 }}
               >
-                📅 Book Your Free Consultation
+                📅 {t("about.cta")}
               </Button>
 
             </div>

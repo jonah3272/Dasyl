@@ -4,10 +4,10 @@ import { Shield, Award, Users, Clock, CheckCircle, Star } from "lucide-react";
 const TrustSignalsSection = () => {
   const credentials = [
     { 
-      text: "Licensed Clinical Social Worker (LCSW)", 
+      text: "Licensed Professional", 
       icon: Shield,
       color: "trust-blue",
-      stat: "LCSW"
+      stat: "Pro"
     },
     { 
       text: "Over 5 years of experience", 
@@ -22,10 +22,10 @@ const TrustSignalsSection = () => {
       stat: "500+"
     },
     { 
-      text: "Serving Wisconsin and California", 
+      text: "Serving Panama City, Panama", 
       icon: Clock,
       color: "earth-clay",
-      stat: "2"
+      stat: "PA"
     }
   ];
 

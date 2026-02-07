@@ -19,6 +19,8 @@ const AboutSection = () => {
               <img 
                 src="/lovable-uploads/cdf59d60-5cd7-45de-9554-8f08c496eb35.png"
                 alt="Professional headshot"
+                loading="lazy"
+                decoding="async"
                 className="relative z-10 w-full h-full object-cover object-top"
               />
             </div>

@@ -1,276 +1,190 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Clock, Send, Calendar } from "lucide-react";
+import { Mail, MapPin, Clock, MessageCircle, ChevronDown, ChevronUp } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const WHATSAPP_NUMBER = "50765509216";
+const EMAIL = "psic.suman@gmail.com";
 
 export default function ContactSection({ withId = true }: { withId?: boolean }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState('');
+  const [submitError, setSubmitError] = useState("");
+  const [formOpen, setFormOpen] = useState(false);
   const { toast } = useToast();
+  const { t } = useLanguage();
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t("whatsapp.prefill"))}`;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitError('');
-    
+    setSubmitError("");
     try {
       const form = e.currentTarget;
       const formData = new FormData(form);
-      
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString(),
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
       });
-      
       if (response.ok) {
         toast({
-          title: "🎉 Your message is on its way!",
-          description: "Thanks for reaching out! I'll get back to you within 24 hours to schedule your free consultation.",
+          title: t("toast.successTitle"),
+          description: t("toast.successDesc"),
           variant: "success",
         });
         form.reset();
+        setFormOpen(false);
       } else {
-        throw new Error('Form submission failed');
+        throw new Error("Form submission failed");
       }
-    } catch (error) {
-      setSubmitError('There was an error sending your message. Please try again or email me directly.');
+    } catch {
+      setSubmitError(t("toast.error"));
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section id={withId ? "contact" : undefined} data-page-hero className="py-8 sm:py-12 bg-gradient-to-br from-cozy-brown/5 via-warm-cream to-gentle-terracotta/10 relative overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/8 to-earth-clay/8 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-tl from-soft-sage/8 to-cozy-brown/8 rounded-full blur-3xl"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* More compact header */}
-        <div data-lead="contact" className="text-center mb-4 sm:mb-6">          
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-cozy-brown mb-2 sm:mb-3">
-            Ready to Make Real Progress? 
-            <span className="block text-gentle-terracotta">Let's Connect.</span>
+    <section
+      id={withId ? "contact" : undefined}
+      data-page-hero
+      className="py-8 sm:py-12 bg-gradient-to-br from-cozy-brown/5 via-warm-cream to-gentle-terracotta/10 relative overflow-hidden"
+    >
+      <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/8 to-earth-clay/8 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-tl from-soft-sage/8 to-cozy-brown/8 rounded-full blur-3xl" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+        <header className="text-center mb-6 sm:mb-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-cozy-brown mb-2">
+            {t("contact.heading")}
+            <span className="block text-gentle-terracotta">{t("contact.subheading")}</span>
           </h2>
-          <p className="text-base sm:text-lg text-cozy-brown/80 max-w-4xl mx-auto">
-            Book your free 15-minute consultation to discover how Zach's clear, honest therapy can guide you toward meaningful progress.
-          </p>
+          <p className="text-cozy-brown/80 font-medium">{t("contact.subtitle")}</p>
+          <p className="text-sm text-cozy-brown/70 mt-1">{t("contact.intro")}</p>
+        </header>
+
+        {/* Primary: WhatsApp + Email CTAs */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02]"
+            aria-label={t("contact.whatsappAria")}
+          >
+            <MessageCircle className="w-6 h-6 shrink-0" strokeWidth={2} />
+            <span>{t("contact.ctaWhatsapp")}</span>
+          </a>
+          <a
+            href={`mailto:${EMAIL}`}
+            className="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl bg-cozy-brown hover:bg-cozy-brown/90 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02]"
+            aria-label={t("contact.ctaEmail")}
+          >
+            <Mail className="w-6 h-6 shrink-0" />
+            <span>{t("contact.ctaEmail")}</span>
+          </a>
         </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
-          {/* More compact contact form */}
-          <div className="lg:col-span-2">
-            <Card className="bg-white/70 backdrop-blur-sm border-2 border-soft-sage/20 shadow-xl overflow-hidden">
-              <div className="h-1 bg-gradient-to-r from-gentle-terracotta to-earth-clay"></div>
-              <CardHeader className="bg-gradient-to-br from-gentle-terracotta/5 to-earth-clay/5 pb-2 sm:pb-3">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
-                  <div className="w-10 h-10 bg-gentle-terracotta/20 rounded-xl flex items-center justify-center">
-                    <Send className="w-5 h-5 text-gentle-terracotta" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-lg sm:text-xl font-heading font-bold text-cozy-brown">Send a Confidential Message</CardTitle>
-                    <CardDescription className="text-cozy-brown/70 text-sm sm:text-base">
-                      I'll respond within 24 hours. All communications are confidential.
-              </CardDescription>
-                  </div>
-                </div>
-            </CardHeader>
-              <CardContent className="space-y-3 sm:space-y-4 p-3 sm:p-4">
-                <form 
-                  name="contact" 
-                  method="POST" 
-                  data-netlify="true" 
-                  data-netlify-honeypot="bot-field"
-                  onSubmit={handleSubmit} 
-                  className="space-y-2.5 sm:space-y-3"
-                >
-                  {/* Netlify form detection */}
-                  <input type="hidden" name="form-name" value="contact" />
-                  {/* Honeypot field for spam protection */}
-                  <div style={{ display: 'none' }}>
-                    <label>
-                      Don't fill this out if you're human: <input name="bot-field" />
-                    </label>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                    <div className="space-y-1 sm:space-y-2">
-                      <Label htmlFor="firstName" className="font-semibold text-cozy-brown text-xs uppercase tracking-wider">First Name *</Label>
-                  <Input 
-                    id="firstName" 
-                    name="firstName"
-                    placeholder="Your first name" 
-                        className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-1.5 text-sm h-9"
-                    required
-                    aria-required="true"
-                  />
-                </div>
-                    <div className="space-y-1 sm:space-y-2">
-                      <Label htmlFor="lastName" className="font-semibold text-cozy-brown text-xs uppercase tracking-wider">Last Name *</Label>
-                  <Input 
-                    id="lastName" 
-                    name="lastName"
-                    placeholder="Your last name" 
-                        className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-1.5 text-sm h-9"
-                    required
-                    aria-required="true"
-                  />
-                </div>
-              </div>
-                  
-                  <div className="space-y-1 sm:space-y-2">
-                    <Label htmlFor="email" className="font-semibold text-cozy-brown text-xs uppercase tracking-wider">Email Address *</Label>
-                <Input 
-                  id="email" 
-                  name="email"
-                  type="email" 
-                  placeholder="your.email@example.com" 
-                      className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-2 text-sm"
-                  required
-                  aria-required="true"
-                  aria-describedby="email-description"
-                />
-                    <p id="email-description" className="text-xs text-cozy-brown/60">We'll use this to send you appointment confirmations and secure messages</p>
-              </div>
-                  
-                  <div className="space-y-1 sm:space-y-2">
-                    <Label htmlFor="phone" className="font-semibold text-cozy-brown text-xs uppercase tracking-wider">Phone Number (Optional)</Label>
-                <Input 
-                  id="phone" 
-                  name="phone"
-                  type="tel" 
-                  placeholder="(555) 123-4567" 
-                      className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-2 text-sm"
-                  aria-describedby="phone-description"
-                />
-                    <p id="phone-description" className="text-xs text-cozy-brown/60">Optional - for appointment reminders only</p>
-              </div>
-                  
-                  <div className="space-y-1 sm:space-y-2">
-                    <Label htmlFor="message" className="font-semibold text-cozy-brown text-xs uppercase tracking-wider">What brings you to online therapy? *</Label>
-                <Textarea 
-                  id="message" 
-                  name="message"
-                  placeholder="Share what you're comfortable with... anxiety, depression, life transitions, relationships, etc. This helps me understand how I can best support you."
-                      rows={2}
-                      className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg resize-none text-sm py-1.5"
-                  required
-                  aria-required="true"
-                  aria-describedby="message-description"
-                />
-                    <p id="message-description" className="text-xs text-cozy-brown/60">Your information is completely confidential and HIPAA-protected</p>
-                  </div>
-                  
-                  {/* Error Message */}
-                  {submitError && (
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
-                      <div className="flex items-center justify-center mb-2">
-                        <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                          <span className="text-red-600">!</span>
-                        </div>
-                      </div>
-                      <h4 className="font-bold text-red-600 mb-1">Submission Error</h4>
-                      <p className="text-sm text-red-700">{submitError}</p>
-              </div>
-                  )}
 
-                  {/* Submit Button */}
-              <Button 
-                type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? (
-                      <div className="flex items-center justify-center">
-                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                        Sending...
-                      </div>
-                    ) : (
-                      <>📅 Send Message & Book Your Free Consultation</>
-                    )}
-              </Button>
-                  <p id="submit-description" className="text-xs text-center text-cozy-brown/60">
-                    By submitting this form, you agree to receive email communications about your consultation. No spam, ever.
-              </p>
-                </form>
-            </CardContent>
-          </Card>
-          </div>
+        {/* Contact details card - SEO & clarity */}
+        <Card className="bg-white/70 backdrop-blur-sm border border-cozy-brown/15 shadow-lg mb-6">
+          <CardContent className="p-5 sm:p-6 space-y-4">
+            <div className="flex items-start gap-3">
+              <Mail className="w-5 h-5 text-gentle-terracotta shrink-0 mt-0.5" />
+              <div>
+                <p className="font-semibold text-cozy-brown text-sm uppercase tracking-wider">{t("contact.emailLabel")}</p>
+                <a href={`mailto:${EMAIL}`} className="text-cozy-brown/90 hover:text-gentle-terracotta break-all">
+                  {EMAIL}
+                </a>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <MessageCircle className="w-5 h-5 text-[#25D366] shrink-0 mt-0.5" />
+              <div>
+                <p className="font-semibold text-cozy-brown text-sm uppercase tracking-wider">{t("contact.whatsappLabel")}</p>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-cozy-brown/90 hover:text-[#25D366]">
+                  (507) 655-09216
+                </a>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <MapPin className="w-5 h-5 text-gentle-terracotta shrink-0 mt-0.5" />
+              <div>
+                <p className="font-semibold text-cozy-brown text-sm uppercase tracking-wider">{t("contact.office")}</p>
+                <p className="text-cozy-brown/80 text-sm">Century Tower, Piso 19, Oficina 1920, Ciudad de Panamá, Panamá</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Clock className="w-5 h-5 text-earth-clay shrink-0 mt-0.5" />
+              <div>
+                <p className="font-semibold text-cozy-brown text-sm uppercase tracking-wider">{t("contact.response")}</p>
+                <p className="text-cozy-brown/80 text-sm">{t("contact.responseTime")}</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
-          {/* More compact contact info */}
-          <div className="space-y-4 sm:space-y-6">
-            <Card className="bg-white/60 backdrop-blur-sm border border-cozy-brown/20 shadow-lg">
-              <CardHeader className="pb-3 sm:pb-4">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 bg-cozy-brown/20 rounded-lg flex items-center justify-center">
-                    <Mail className="w-4 h-4 text-cozy-brown" />
-                  </div>
-                  <CardTitle className="text-base font-heading font-bold text-cozy-brown">Direct Contact</CardTitle>
+        {/* Optional form - collapsible */}
+        <div className="border border-soft-sage/30 rounded-xl bg-white/60 overflow-hidden">
+          <button
+            type="button"
+            onClick={() => setFormOpen(!formOpen)}
+            className="w-full flex items-center justify-between gap-2 py-3 px-4 text-left font-medium text-cozy-brown hover:bg-cozy-brown/5 transition-colors"
+            aria-expanded={formOpen}
+          >
+            <span>{formOpen ? t("contact.formTitle") : t("contact.orForm")}</span>
+            {formOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+          </button>
+          {formOpen && (
+            <div className="px-4 pb-4 border-t border-soft-sage/20 pt-4">
+              <p className="text-sm text-cozy-brown/70 mb-3">{t("contact.formDesc")}</p>
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+                className="space-y-3"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <div style={{ display: "none" }}>
+                  <label>No completar: <input name="bot-field" /></label>
                 </div>
-              </CardHeader>
-              <CardContent className="pt-0 space-y-3">
-                <a 
-                  href="mailto:zach@resilientmindcounseling.info" 
-                  className="flex items-center gap-3 p-2 bg-cozy-brown/5 rounded-lg hover:bg-cozy-brown/10 transition-colors duration-200 cursor-pointer group"
-                >
-                  <Mail className="w-4 h-4 text-cozy-brown/70 group-hover:text-cozy-brown transition-colors duration-200" />
-                  <div>
-                    <p className="font-medium text-cozy-brown text-sm group-hover:text-cozy-brown/90">Email</p>
-                    <p className="text-xs text-cozy-brown/70 group-hover:text-cozy-brown">
-                      zach@resilientmindcounseling.info
-                    </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="space-y-1">
+                    <Label htmlFor="firstName" className="text-xs font-semibold text-cozy-brown uppercase">{t("contact.firstName")}</Label>
+                    <Input id="firstName" name="firstName" placeholder={t("contact.firstNamePlaceholder")} required className="h-9" />
                   </div>
-                </a>
-                <a 
-                  href="tel:+14143480996" 
-                  className="flex items-center gap-3 p-2 bg-cozy-brown/5 rounded-lg hover:bg-cozy-brown/10 transition-colors duration-200 cursor-pointer group"
-                >
-                  <Phone className="w-4 h-4 text-cozy-brown/70 group-hover:text-cozy-brown transition-colors duration-200" />
-                  <div>
-                    <p className="font-medium text-cozy-brown text-sm group-hover:text-cozy-brown/90">Phone</p>
-                    <p className="text-xs text-cozy-brown/70 group-hover:text-cozy-brown">
-                      (414) 348-0996
-                    </p>
-                  </div>
-                </a>
-                <div className="flex items-center gap-3 p-2 bg-gentle-terracotta/5 rounded-lg">
-                  <MapPin className="w-4 h-4 text-gentle-terracotta/70" />
-                  <div>
-                    <p className="font-medium text-cozy-brown text-sm">Serving</p>
-                    <p className="text-xs text-cozy-brown/70">California & Wisconsin</p>
+                  <div className="space-y-1">
+                    <Label htmlFor="lastName" className="text-xs font-semibold text-cozy-brown uppercase">{t("contact.lastName")}</Label>
+                    <Input id="lastName" name="lastName" placeholder={t("contact.lastNamePlaceholder")} required className="h-9" />
                   </div>
                 </div>
-                <div className="flex items-center gap-3 p-2 bg-earth-clay/5 rounded-lg">
-                  <Clock className="w-4 h-4 text-earth-clay/70" />
-                  <div>
-                    <p className="font-medium text-cozy-brown text-sm">Response Time</p>
-                    <p className="text-xs text-cozy-brown/70">Within 24 hours</p>
-                  </div>
+                <div className="space-y-1">
+                  <Label htmlFor="email" className="text-xs font-semibold text-cozy-brown uppercase">{t("contact.email")}</Label>
+                  <Input id="email" name="email" type="email" placeholder={t("contact.emailPlaceholder")} required className="h-9" />
                 </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-gradient-to-br from-gentle-terracotta/10 to-earth-clay/10 border border-gentle-terracotta/20 shadow-lg">
-              <CardContent className="p-4 sm:p-6">
-                <h4 className="text-base font-heading font-bold text-cozy-brown mb-2">Free Consultation</h4>
-                <p className="text-xs sm:text-sm text-cozy-brown/80 mb-3">
-                  15 minutes to see if we're a good fit. No pressure, just honest conversation about your goals.
-                </p>
-                <div className="bg-white/70 rounded-lg p-3 border border-gentle-terracotta/20">
-                  <p className="text-xs font-semibold text-gentle-terracotta uppercase tracking-wider mb-1">What We'll Cover</p>
-                  <ul className="text-xs text-cozy-brown/80 space-y-1">
-                    <li>• Your current challenges</li>
-                    <li>• How I can help</li>
-                    <li>• Next steps together</li>
-                  </ul>
+                <div className="space-y-1">
+                  <Label htmlFor="phone" className="text-xs font-semibold text-cozy-brown uppercase">{t("contact.phone")}</Label>
+                  <Input id="phone" name="phone" type="tel" placeholder="(507) 655-09216" className="h-9" />
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+                <div className="space-y-1">
+                  <Label htmlFor="message" className="text-xs font-semibold text-cozy-brown uppercase">{t("contact.message")}</Label>
+                  <Textarea id="message" name="message" placeholder={t("contact.messagePlaceholder")} rows={2} required className="resize-none" />
+                </div>
+                {submitError && (
+                  <p className="text-sm text-red-600">{submitError}</p>
+                )}
+                <Button type="submit" disabled={isSubmitting} className="w-full bg-gentle-terracotta hover:bg-earth-clay">
+                  {isSubmitting ? t("contact.sending") : t("contact.submit")}
+                </Button>
+              </form>
+            </div>
+          )}
         </div>
       </div>
     </section>
