@@ -1,22 +1,24 @@
 import HeroSection from "@/components/HeroSection";
-import VirtualTherapySection from "@/components/VirtualTherapySection";
-import TrustSignalsSection from "@/components/TrustSignalsSection";
 import AboutSection from "@/components/sections/AboutSection";
-import SpecialtiesSection from "@/components/sections/SpecialtiesSection";
-import PricingSection from "@/components/sections/PricingSection";
+import ServicesSection from "@/components/sections/ServicesSection";
+import ExperienceSection from "@/components/sections/ExperienceSection";
+import EducationSection from "@/components/sections/EducationSection";
+import AffiliationsSection from "@/components/sections/AffiliationsSection";
+import FAQSection from "@/components/sections/FAQSection";
 import ContactSection from "@/components/sections/ContactSection";
 import SmoothAnchorOffset from "@/components/SmoothAnchorOffset";
 
 const Home = () => {
   return (
-    <main>
+    <main id="main-content">
       <SmoothAnchorOffset />
       <HeroSection />
       <AboutSection />
-      <SpecialtiesSection />
-      <VirtualTherapySection />
-      <TrustSignalsSection />
-      <PricingSection />
+      <ServicesSection />
+      <ExperienceSection />
+      <EducationSection />
+      <AffiliationsSection />
+      <FAQSection />
       <ContactSection />
     </main>
   );
