@@ -6,7 +6,7 @@ export default function WhatsAppButton() {
   const { t } = useLanguage();
   // Replace with actual WhatsApp number (format: country code + number without + or spaces)
   // Example: "50712345678" for Panama (+507 1234-5678)
-  const whatsappNumber = "507"; // TODO: Update with actual WhatsApp number
+  const whatsappNumber = "50765509216";
   const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   return (

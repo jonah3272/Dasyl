@@ -98,7 +98,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   </div>
                 </a>
                 <a
-                  href="https://wa.me/507"
+                  href="https://wa.me/50765509216"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-2 bg-gentle-terracotta/5 rounded-lg hover:bg-gentle-terracotta/10 transition-colors duration-200 cursor-pointer group"
