@@ -1,17 +1,11 @@
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Award, BookOpen, Users, Target } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useLocation, useNavigate } from "react-router-dom";
-
 const arturoProfessionalImage = "/Arturo Suman.jpeg";
 
 export default function AboutSection({ withId = true }: { withId?: boolean }) {
   const { t } = useLanguage();
-  const location = useLocation();
-  const navigate = useNavigate();
-  const isHomePage = location.pathname === "/";
 
   return (
     <section id={withId ? "about" : undefined} className={`${withId ? 'pt-6 pb-12 sm:pt-8 sm:pb-16 lg:pt-12 lg:pb-24' : 'pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-24'} bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/20 relative overflow-hidden`}>
@@ -123,33 +117,6 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
           </Card>
         </div>
 
-        {/* CTA Button */}
-        <div className="text-center">
-          <Button 
-            size="lg"
-            onClick={() => {
-              if (isHomePage) {
-                // If on home page, scroll to contact section
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                  const headerOffset = 80;
-                  const elementPosition = contactSection.offsetTop;
-                  const offsetPosition = elementPosition - headerOffset;
-                  
-                  window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                  });
-                }
-              } else {
-                // If on other pages, navigate to contact page
-                navigate('/contacto');
-              }
-            }}
-          >
-            {t('hero.cta')}
-          </Button>
-        </div>
       </div>
     </section>
   );
