@@ -11,9 +11,9 @@ const Navigation = () => {
   const onHome = pathname === "/";
 
   const navItems = [
-    { name: t("nav.about"), href: "/sobre-mi", anchor: "about", englishHref: "/about" },
-    { name: t("nav.services"), href: "/servicios", anchor: null, englishHref: "/services" },
-    { name: t("nav.experience"), href: "/experiencia", anchor: null, englishHref: "/experience" }
+    { name: t("nav.about"), href: "/sobre-mi", englishHref: "/about" },
+    { name: t("nav.services"), href: "/servicios", englishHref: "/services" },
+    { name: t("nav.experience"), href: "/experiencia", englishHref: "/experience" }
   ];
 
   const toggleLanguage = () => {
@@ -24,24 +24,8 @@ const Navigation = () => {
     setIsMenuOpen(false);
   };
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, anchor: string | null) => {
+  const handleNavClick = () => {
     setIsMenuOpen(false);
-    
-    // If we're on home page and there's an anchor, scroll to it instead of navigating
-    if (onHome && anchor) {
-      e.preventDefault();
-      const section = document.getElementById(anchor);
-      if (section) {
-        const headerOffset = 80;
-        const elementPosition = section.offsetTop;
-        const offsetPosition = elementPosition - headerOffset;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    }
   };
 
   const handleContactClick = () => {
@@ -87,7 +71,7 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                onClick={(e) => handleNavClick(e, item.anchor)}
+                onClick={handleNavClick}
                 className={`font-medium px-3 py-2 rounded-md transition-all duration-500 nav-link text-sm lg:text-base transform hover:scale-105 hover:-translate-y-0.5 ${
                   pathname === item.href || pathname === item.englishHref
                     ? 'text-white bg-white/20 shadow-lg' 
@@ -141,7 +125,7 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  onClick={(e) => handleNavClick(e, item.anchor)}
+                  onClick={handleNavClick}
                   className={`font-medium px-4 py-3 text-left rounded-md transition-all duration-500 hover:bg-white/10 text-base transform hover:translate-x-2 ${
                     pathname === item.href || pathname === item.englishHref
                       ? 'text-white bg-white/20 shadow-md'
