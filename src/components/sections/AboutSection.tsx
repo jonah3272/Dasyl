@@ -31,7 +31,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
               <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-2 shadow-2xl">
                 <img
                   src={arturoProfessionalImage}
-                  alt="Arturo Suman, Psicólogo Forense y Clínico"
+                  alt="Arturo Suman, psicólogo forense y clínico, Psilegconsultants, consultorio Century Tower Ciudad de Panamá"
                   className="w-full rounded-xl shadow-lg object-cover aspect-[3/4]"
                   loading="lazy"
                 />

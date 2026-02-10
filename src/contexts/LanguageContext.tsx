@@ -43,6 +43,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       'hero.title': 'Arturo Suman',
       'hero.subtitle': 'Psicólogo Forense y Clínico',
       'hero.description': 'Consultoría en Psicología Forense y Clínica. Evaluación profesional, criterio técnico y respaldo científico al servicio de la justicia y la salud mental.',
+      'hero.location': 'Psilegconsultants · Century Tower, Ciudad de Panamá',
       'hero.cta': 'Consultar',
       
       // About Section
@@ -142,6 +143,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       'contact.location': 'Ubicación',
       'contact.response': 'Tiempo de respuesta',
       'contact.responseTime': 'Dentro de 24 horas',
+      'contact.ctaTitle': '¿Listo para consultar?',
+      'contact.ctaDescription': 'Escríbeme por WhatsApp y te responderé en menos de 24 horas. Todas las comunicaciones son confidenciales.',
+      'contact.ctaButton': 'Abrir WhatsApp',
+      'contact.whatsappPrefill': 'Hola, me gustaría solicitar información sobre sus servicios de psicología forense. Gracias.',
       
       // WhatsApp
       'whatsapp.label': 'Contactar por WhatsApp',
@@ -159,6 +164,26 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       'faq.answer4': 'Realizo evaluaciones psicológicas forenses para procesos judiciales en las siguientes jurisdicciones: Penal, Penitenciaria, Civil y Familia, Laboral y Social, Contencioso-administrativa, y Valoración del daño psicológico.',
       'faq.question5': '¿Cuánto tiempo tarda una evaluación psicológica forense?',
       'faq.answer5': 'El tiempo de una evaluación psicológica forense varía según la complejidad del caso. Generalmente, el proceso completo puede tomar entre 2 a 4 semanas desde la primera entrevista hasta la entrega del informe final. Para casos más complejos, puede extenderse según sea necesario.',
+      
+      // Privacy
+      'privacy.title': 'Aviso de Privacidad',
+      'privacy.lastUpdate': 'Última actualización',
+      'privacy.intro': 'En Psilegconsultants (Arturo Suman) respetamos su privacidad. Este aviso describe cómo tratamos la información en relación con este sitio web y el contacto por correo o WhatsApp.',
+      'privacy.collect': 'Información que podemos recoger',
+      'privacy.collectText': 'Al contactarnos por correo electrónico (psic.suman@gmail.com) o por WhatsApp ((507) 65509216), podemos recibir su nombre, correo, número de teléfono y el contenido de su mensaje. El sitio utiliza Google Tag Manager para análisis y mejora del sitio; ello puede implicar cookies según la configuración de esas herramientas.',
+      'privacy.use': 'Uso de la información',
+      'privacy.useText': 'La información de contacto se utiliza únicamente para responder a sus consultas profesionales y, en su caso, para la coordinación de evaluaciones o servicios de psicología forense. No vendemos ni compartimos sus datos con terceros para fines comerciales.',
+      'privacy.cookies': 'Cookies y tecnologías similares',
+      'privacy.cookiesText': 'Este sitio puede utilizar cookies para el funcionamiento del sitio y para análisis (por ejemplo, a través de Google Tag Manager). Puede configurar su navegador para rechazar o limitar cookies.',
+      'privacy.contact': 'Contacto',
+      'privacy.contactText': 'Para preguntas sobre este aviso o sus datos: psic.suman@gmail.com. Psilegconsultants, Century Tower, Piso 19, Oficina 1920, Ciudad de Panamá, Panamá.',
+      'privacy.rights': 'Sus derechos',
+      'privacy.rightsText': 'Puede solicitar información sobre los datos que tengamos sobre usted y, cuando aplique, la corrección o eliminación de los mismos, conforme a la ley aplicable en Panamá.',
+      
+      // Footer
+      'footer.contact': 'Contacto',
+      'footer.privacy': 'Aviso de Privacidad',
+      'footer.rights': 'Psilegconsultants. Todos los derechos reservados.',
     },
     en: {
       // Navigation
@@ -172,6 +197,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       'hero.title': 'Arturo Suman',
       'hero.subtitle': 'Forensic and Clinical Psychologist',
       'hero.description': 'Consulting in Forensic and Clinical Psychology. Professional evaluation, technical criteria and scientific support at the service of justice and mental health.',
+      'hero.location': 'Psilegconsultants · Century Tower, Panama City',
       'hero.cta': 'Consult',
       
       // About Section
@@ -261,6 +287,13 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       'contact.form.sending': 'Sending...',
       'contact.form.success': 'Message sent!',
       'contact.form.error': 'Error sending message. Please try again.',
+      'contact.location': 'Location',
+      'contact.response': 'Response time',
+      'contact.responseTime': 'Within 24 hours',
+      'contact.ctaTitle': 'Ready to consult?',
+      'contact.ctaDescription': 'Message me on WhatsApp and I\'ll reply within 24 hours. All communications are confidential.',
+      'contact.ctaButton': 'Open WhatsApp',
+      'contact.whatsappPrefill': 'Hello, I would like to request information about your forensic psychology services. Thank you.',
       
       // FAQ Section
       'faq.title': 'Frequently Asked Questions',
@@ -275,6 +308,26 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       'faq.answer4': 'I perform forensic psychological evaluations for judicial processes in the following jurisdictions: Criminal, Penitentiary, Civil and Family, Labor and Social, Administrative, and Psychological damage assessment.',
       'faq.question5': 'How long does a forensic psychological evaluation take?',
       'faq.answer5': 'The time for a forensic psychological evaluation varies according to the complexity of the case. Generally, the complete process can take between 2 to 4 weeks from the first interview to the delivery of the final report. For more complex cases, it may be extended as necessary.',
+      
+      // Privacy
+      'privacy.title': 'Privacy Notice',
+      'privacy.lastUpdate': 'Last updated',
+      'privacy.intro': 'At Psilegconsultants (Arturo Suman) we respect your privacy. This notice describes how we handle information in connection with this website and contact by email or WhatsApp.',
+      'privacy.collect': 'Information we may collect',
+      'privacy.collectText': 'When you contact us by email (psic.suman@gmail.com) or WhatsApp ((507) 65509216), we may receive your name, email, phone number, and the content of your message. The site uses Google Tag Manager for analytics and site improvement; this may involve cookies as per those tools’ settings.',
+      'privacy.use': 'Use of information',
+      'privacy.useText': 'Contact information is used only to respond to your professional inquiries and, where applicable, to coordinate evaluations or forensic psychology services. We do not sell or share your data with third parties for commercial purposes.',
+      'privacy.cookies': 'Cookies and similar technologies',
+      'privacy.cookiesText': 'This site may use cookies for site functionality and analytics (e.g. via Google Tag Manager). You can set your browser to reject or limit cookies.',
+      'privacy.contact': 'Contact',
+      'privacy.contactText': 'For questions about this notice or your data: psic.suman@gmail.com. Psilegconsultants, Century Tower, Floor 19, Office 1920, Panama City, Panama.',
+      'privacy.rights': 'Your rights',
+      'privacy.rightsText': 'You may request information about the data we hold about you and, where applicable, its correction or deletion, in accordance with applicable law in Panama.',
+      
+      // Footer
+      'footer.contact': 'Contact',
+      'footer.privacy': 'Privacy Notice',
+      'footer.rights': 'Psilegconsultants. All rights reserved.',
     },
   };
 

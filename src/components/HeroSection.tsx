@@ -43,9 +43,12 @@ const HeroSection = () => {
             </h1>
             
             {/* Description Card - Semi-transparent with white text */}
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-5 sm:p-6 border-2 border-white/20 shadow-2xl mb-5 sm:mb-6">
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-5 sm:p-6 border-2 border-white/20 shadow-2xl mb-4">
               <p className="text-base sm:text-lg text-white leading-relaxed drop-shadow-md">
                 {t('hero.description')}
+              </p>
+              <p className="text-sm text-white/90 mt-3 font-medium drop-shadow-md" aria-hidden="true">
+                {t('hero.location')}
               </p>
             </div>
             

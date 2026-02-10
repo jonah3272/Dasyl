@@ -13,7 +13,9 @@ const About = lazy(() => import("./pages/About"));
 const Services = lazy(() => import("./pages/Services"));
 const Experience = lazy(() => import("./pages/Experience"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Privacy = lazy(() => import("./pages/Privacy"));
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 import SetHeaderVar from "./components/SetHeaderVar";
 import ScrollToTop from "./components/ScrollToTop";
 import WhatsAppButton from "./components/WhatsAppButton";
@@ -33,22 +35,26 @@ const App = () => (
           <ErrorBoundary>
             <SkipToContent />
             <ScrollToTop />
-            <div className="min-h-screen">
+            <div className="min-h-screen flex flex-col">
               <SetHeaderVar />
               <Navigation />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/sobre-mi" element={<Suspense fallback={<LoadingSpinner />}><About /></Suspense>} />
-                <Route path="/servicios" element={<Suspense fallback={<LoadingSpinner />}><Services /></Suspense>} />
-                <Route path="/experiencia" element={<Suspense fallback={<LoadingSpinner />}><Experience /></Suspense>} />
-                <Route path="/contacto" element={<Suspense fallback={<LoadingSpinner />}><Contact /></Suspense>} />
-                {/* English routes for language toggle compatibility */}
-                <Route path="/about" element={<Suspense fallback={<LoadingSpinner />}><About /></Suspense>} />
-                <Route path="/services" element={<Suspense fallback={<LoadingSpinner />}><Services /></Suspense>} />
-                <Route path="/experience" element={<Suspense fallback={<LoadingSpinner />}><Experience /></Suspense>} />
-                <Route path="/contact" element={<Suspense fallback={<LoadingSpinner />}><Contact /></Suspense>} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <div className="flex-1">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/sobre-mi" element={<Suspense fallback={<LoadingSpinner />}><About /></Suspense>} />
+                  <Route path="/servicios" element={<Suspense fallback={<LoadingSpinner />}><Services /></Suspense>} />
+                  <Route path="/experiencia" element={<Suspense fallback={<LoadingSpinner />}><Experience /></Suspense>} />
+                  <Route path="/contacto" element={<Suspense fallback={<LoadingSpinner />}><Contact /></Suspense>} />
+                  <Route path="/privacidad" element={<Suspense fallback={<LoadingSpinner />}><Privacy /></Suspense>} />
+                  <Route path="/about" element={<Suspense fallback={<LoadingSpinner />}><About /></Suspense>} />
+                  <Route path="/services" element={<Suspense fallback={<LoadingSpinner />}><Services /></Suspense>} />
+                  <Route path="/experience" element={<Suspense fallback={<LoadingSpinner />}><Experience /></Suspense>} />
+                  <Route path="/contact" element={<Suspense fallback={<LoadingSpinner />}><Contact /></Suspense>} />
+                  <Route path="/privacy" element={<Suspense fallback={<LoadingSpinner />}><Privacy /></Suspense>} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </div>
+              <Footer />
               <WhatsAppButton />
             </div>
           </ErrorBoundary>
