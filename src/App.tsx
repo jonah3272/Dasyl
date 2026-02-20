@@ -38,7 +38,7 @@ const App = () => (
             <div className="min-h-screen flex flex-col">
               <SetHeaderVar />
               <Navigation />
-              <div>
+<div className="flex-1">
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/sobre-mi" element={<Suspense fallback={<LoadingSpinner />}><About /></Suspense>} />

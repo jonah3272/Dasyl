@@ -41,6 +41,8 @@ const SEOHead = ({
           "name": "Arturo Suman",
           "description": "Psicólogo forense y clínico en Ciudad de Panamá, Panamá, con más de 17 años de experiencia en Psicología Forense. Más de 4,000 evaluaciones psicológicas forenses realizadas.",
           "url": canonicalUrl,
+          "telephone": "+507 6550-9216",
+          "email": "psic.suman@gmail.com",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Ciudad de Panamá",

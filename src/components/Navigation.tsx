@@ -169,11 +169,11 @@ const Navigation = () => {
         )}
       </nav>
 
-      {/* Floating CTA Button - Mobile Optimized */}
-      <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden">
+      {/* Floating CTA Button - Mobile Optimized; safe area for notched devices */}
+      <div className="fixed z-40 md:hidden left-[max(1rem,env(safe-area-inset-left))] right-[max(1rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] pb-2">
         {onHome ? (
           <Button 
-            className="w-full"
+            className="w-full min-h-[48px]"
             onClick={handleContactClick}
           >
             {t("nav.book")}
@@ -181,7 +181,7 @@ const Navigation = () => {
         ) : (
           <Link to="/contacto" className="block">
             <Button 
-              className="w-full"
+              className="w-full min-h-[48px]"
               onClick={handleContactClick}
             >
               {t("nav.book")}

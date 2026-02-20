@@ -150,6 +150,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       
       // WhatsApp
       'whatsapp.label': 'Contactar por WhatsApp',
+
+      // Footer
+      'footer.privacy': 'Aviso de Privacidad',
       
       // FAQ Section
       'faq.title': 'Preguntas Frecuentes',
@@ -294,7 +297,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       'contact.ctaDescription': 'Message me on WhatsApp and I\'ll reply within 24 hours. All communications are confidential.',
       'contact.ctaButton': 'Open WhatsApp',
       'contact.whatsappPrefill': 'Hello, I would like to request information about your forensic psychology services. Thank you.',
-      
+
+      // Footer
+      'footer.privacy': 'Privacy Notice',
+
       // FAQ Section
       'faq.title': 'Frequently Asked Questions',
       'faq.subtitle': 'Answers to the most common questions about my forensic psychology services',

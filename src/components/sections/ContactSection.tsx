@@ -49,7 +49,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   <MessageCircle className="w-4 h-4 text-gentle-terracotta/70 group-hover:text-gentle-terracotta transition-colors duration-200" />
                   <div>
                     <p className="font-medium text-cozy-brown text-sm group-hover:text-cozy-brown/90">{t("contact.phone")}</p>
-                    <p className="text-xs text-cozy-brown/70 group-hover:text-cozy-brown">WhatsApp</p>
+                    <p className="text-xs text-cozy-brown/70 group-hover:text-cozy-brown">(507) 6550-9216 · WhatsApp</p>
                   </div>
                 </a>
                 <div className="flex items-center gap-3 p-2 bg-earth-clay/5 rounded-lg">
@@ -98,7 +98,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                 <ArrowRight className="w-5 h-5 shrink-0" />
               </a>
               <p className="text-xs text-cozy-brown/60 mt-4">
-                (507) 655-09216
+                (507) 6550-9216
               </p>
             </CardContent>
           </Card>
