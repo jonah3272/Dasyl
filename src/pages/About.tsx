@@ -9,7 +9,7 @@ export default function About() {
     <main>
       <Helmet>
         <title>{t('about.title')} - Arturo Suman | Psicólogo Forense Panamá</title>
-        <meta name="description" content="Arturo Suman – Psilegconsultants. Psicólogo forense y clínico en Ciudad de Panamá con más de 17 años de experiencia y más de 4,000 evaluaciones forenses. Century Tower, Piso 19, Oficina 1920. Contacto: psic.suman@gmail.com, (507) 65509216." />
+        <meta name="description" content="Arturo Suman – Psilegconsultants. Psicólogo forense y clínico en Ciudad de Panamá con más de 17 años de experiencia y más de 4,000 evaluaciones forenses. Century Tower, Piso 19, Oficina 1920. Contacto: psic.suman@gmail.com, (507) 6550-9216." />
         <meta name="keywords" content="Arturo Suman, Psilegconsultants, psicólogo forense Panamá, mejor psicólogo forense Panamá, psicólogo clínico Ciudad de Panamá, perito psicológico Panamá, evaluación psicológica forense Panamá, psicología forense Panamá, Century Tower Panamá" />
         <link rel="canonical" href="https://arturosuman.com/sobre-mi/" />
         <meta property="og:title" content={`${t('about.title')} - Arturo Suman | Psicólogo Forense Panamá`} />

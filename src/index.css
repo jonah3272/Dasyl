@@ -24,13 +24,13 @@ All colors MUST be HSL.
     --header-h: 72px;           /* typical sticky header height */
     --page-top-extra: 12px;     /* breathing room: tweak to taste */
     
-    /* Ambient, matches Specialties "soft beige/cream" look */
+    /* Ambient soft beige/cream look */
     --ambient-bg:
       radial-gradient(900px 600px at 85% -10%, rgba(119,114,101,.08) 0%, rgba(119,114,101,0) 60%),
       radial-gradient(600px 400px at 10% 15%, rgba(82,136,155,.08) 0%, rgba(82,136,155,0) 60%),
       #F7F4EF;
 
-    /* Card surface + borders/shadow to match Specialties */
+    /* Card surface + borders/shadow */
     --card-surface: #FCFBF8;
     --card-border: rgba(20, 23, 28, 0.08);
     --card-shadow: 0 12px 24px rgba(18, 20, 23, 0.08);
@@ -458,7 +458,7 @@ html {
   background: var(--ambient-bg);
 }
 
-/* Make cards on Approach/Pricing match Specialties cards */
+/* Card layout consistency */
 .page--approach .card,
 .page--pricing .card {
   background: var(--card-surface);

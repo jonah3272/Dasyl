@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -6,10 +7,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { HelpCircle } from "lucide-react";
+import { HelpCircle, ArrowRight } from "lucide-react";
 
 export default function FAQSection({ withId = true }: { withId?: boolean }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const faqs = [
     {
@@ -67,6 +68,18 @@ export default function FAQSection({ withId = true }: { withId?: boolean }) {
             </Accordion>
           </CardContent>
         </Card>
+
+        {withId && (
+          <div className="text-center mt-8">
+            <Link
+              to={language === "es" ? "/contacto" : "/contact"}
+              className="inline-flex items-center gap-2 text-gentle-terracotta hover:text-earth-clay font-semibold transition-colors"
+            >
+              {t("contact.ctaTitle")}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, MapPin, Briefcase } from "lucide-react";
+import { Calendar, MapPin, Briefcase, ArrowRight } from "lucide-react";
 
 export default function ExperienceSection({ withId = true }: { withId?: boolean }) {
   const { t } = useLanguage();
@@ -11,9 +12,15 @@ export default function ExperienceSection({ withId = true }: { withId?: boolean 
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
-            {t('experience.title')}
-          </h2>
+          {withId ? (
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
+              {t('experience.title')}
+            </h2>
+          ) : (
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
+              {t('experience.title')}
+            </h1>
+          )}
         </div>
 
         <div className="space-y-6 sm:space-y-8">
@@ -116,6 +123,18 @@ export default function ExperienceSection({ withId = true }: { withId?: boolean 
             </CardContent>
           </Card>
         </div>
+
+        {withId && (
+          <div className="text-center mt-10">
+            <Link
+              to={language === "es" ? "/experiencia" : "/experience"}
+              className="inline-flex items-center gap-2 text-gentle-terracotta hover:text-earth-clay font-semibold transition-colors"
+            >
+              {t("common.readMore")}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -38,7 +38,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       'nav.experience': 'Experiencia',
       'nav.contact': 'Contacto',
       'nav.book': 'Consultar',
-      
+
+      'common.readMore': 'Ver más',
+
       // Hero Section
       'hero.title': 'Arturo Suman',
       'hero.subtitle': 'Psicólogo Forense y Clínico',
@@ -173,7 +175,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       'privacy.lastUpdate': 'Última actualización',
       'privacy.intro': 'En Psilegconsultants (Arturo Suman) respetamos su privacidad. Este aviso describe cómo tratamos la información en relación con este sitio web y el contacto por correo o WhatsApp.',
       'privacy.collect': 'Información que podemos recoger',
-      'privacy.collectText': 'Al contactarnos por correo electrónico (psic.suman@gmail.com) o por WhatsApp ((507) 65509216), podemos recibir su nombre, correo, número de teléfono y el contenido de su mensaje. El sitio utiliza Google Tag Manager para análisis y mejora del sitio; ello puede implicar cookies según la configuración de esas herramientas.',
+      'privacy.collectText': 'Al contactarnos por correo electrónico (psic.suman@gmail.com) o por WhatsApp ((507) 6550-9216), podemos recibir su nombre, correo, número de teléfono y el contenido de su mensaje. El sitio utiliza Google Tag Manager para análisis y mejora del sitio; ello puede implicar cookies según la configuración de esas herramientas.',
       'privacy.use': 'Uso de la información',
       'privacy.useText': 'La información de contacto se utiliza únicamente para responder a sus consultas profesionales y, en su caso, para la coordinación de evaluaciones o servicios de psicología forense. No vendemos ni compartimos sus datos con terceros para fines comerciales.',
       'privacy.cookies': 'Cookies y tecnologías similares',
@@ -194,8 +196,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       'nav.services': 'Services',
       'nav.experience': 'Experience',
       'nav.contact': 'Contact',
-      'nav.book': 'Consult',
-      
+'nav.book': 'Consult',
+
+      'common.readMore': 'See more',
+
       // Hero Section
       'hero.title': 'Arturo Suman',
       'hero.subtitle': 'Forensic and Clinical Psychologist',
@@ -320,7 +324,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       'privacy.lastUpdate': 'Last updated',
       'privacy.intro': 'At Psilegconsultants (Arturo Suman) we respect your privacy. This notice describes how we handle information in connection with this website and contact by email or WhatsApp.',
       'privacy.collect': 'Information we may collect',
-      'privacy.collectText': 'When you contact us by email (psic.suman@gmail.com) or WhatsApp ((507) 65509216), we may receive your name, email, phone number, and the content of your message. The site uses Google Tag Manager for analytics and site improvement; this may involve cookies as per those tools’ settings.',
+      'privacy.collectText': 'When you contact us by email (psic.suman@gmail.com) or WhatsApp ((507) 6550-9216), we may receive your name, email, phone number, and the content of your message. The site uses Google Tag Manager for analytics and site improvement; this may involve cookies as per those tools’ settings.',
       'privacy.use': 'Use of information',
       'privacy.useText': 'Contact information is used only to respond to your professional inquiries and, where applicable, to coordinate evaluations or forensic psychology services. We do not sell or share your data with third parties for commercial purposes.',
       'privacy.cookies': 'Cookies and similar technologies',

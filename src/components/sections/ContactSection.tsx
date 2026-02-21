@@ -20,9 +20,15 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
           <div className="flex flex-col min-w-0">
             <div className="space-y-6 flex-1">
             <div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
-                {t("contact.title")}
-              </h2>
+              {withId ? (
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
+                  {t("contact.title")}
+                </h2>
+              ) : (
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
+                  {t("contact.title")}
+                </h1>
+              )}
               <p className="text-base sm:text-lg text-cozy-brown/70 mb-6">
                 {t("contact.subtitle")}
               </p>

@@ -12,17 +12,15 @@ const HeroSection = () => {
       className="min-h-screen relative overflow-hidden"
       aria-label="Hero section"
     >
-      {/* Background Image - Centered */}
-      <div 
-        className="absolute inset-0 overflow-hidden"
-        style={{
-          backgroundImage: `url('/Arturo-SMesa-de-trabajo-2.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: '60% center',
-          backgroundRepeat: 'no-repeat',
-        }}
-        aria-hidden="true"
-      >
+      {/* Background Image - LCP + SEO (img for crawlers and alt) */}
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+        <img
+          src="/Arturo-SMesa-de-trabajo-2.png"
+          alt="Arturo Suman, psicólogo forense y clínico, consultorio Century Tower, Ciudad de Panamá, Panamá"
+          className="absolute inset-0 w-full h-full object-cover object-[60%_center]"
+          fetchPriority="high"
+          decoding="async"
+        />
         {/* Lighter gradient overlay to brighten the image */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/10 to-white/15"></div>
       </div>

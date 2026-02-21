@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, Search, Gavel, Lock, CheckCircle2 } from "lucide-react";
+import { FileText, Search, Gavel, Lock, CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function ServicesSection({ withId = true }: { withId?: boolean }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const services = [
     {
@@ -57,9 +58,15 @@ export default function ServicesSection({ withId = true }: { withId?: boolean })
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
-            {t('services.title')}
-          </h2>
+          {withId ? (
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
+              {t('services.title')}
+            </h2>
+          ) : (
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
+              {t('services.title')}
+            </h1>
+          )}
           <p className="text-base sm:text-lg text-cozy-brown/70 max-w-3xl mx-auto">
             {t('services.subtitle')}
           </p>
@@ -134,6 +141,18 @@ export default function ServicesSection({ withId = true }: { withId?: boolean })
             );
           })}
         </div>
+
+        {withId && (
+          <div className="text-center mt-10">
+            <Link
+              to={language === "es" ? "/servicios" : "/services"}
+              className="inline-flex items-center gap-2 text-gentle-terracotta hover:text-earth-clay font-semibold transition-colors"
+            >
+              {t("common.readMore")}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

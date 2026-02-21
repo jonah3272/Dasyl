@@ -11,7 +11,7 @@ export default function Privacy() {
     <main className="min-h-screen bg-gradient-to-br from-cozy-brown/5 via-warm-cream to-gentle-terracotta/10">
       <Helmet>
         <title>{t("privacy.title")} | Arturo Suman – Psilegconsultants</title>
-        <meta name="description" content={`${t("privacy.intro")} ${t("privacy.contact")}: psic.suman@gmail.com, (507) 65509216.`} />
+        <meta name="description" content={`${t("privacy.intro")} ${t("privacy.contact")}: psic.suman@gmail.com, (507) 6550-9216.`} />
         <link rel="canonical" href={`https://arturosuman.com${privacyPath}/`} />
       </Helmet>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28">

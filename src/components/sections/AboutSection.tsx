@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award, BookOpen, Users, Target } from "lucide-react";
+import { Award, BookOpen, Users, Target, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 const arturoProfessionalImage = "/Arturo Suman.jpeg";
 
 export default function AboutSection({ withId = true }: { withId?: boolean }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id={withId ? "about" : undefined} className={`${withId ? 'pt-6 pb-12 sm:pt-8 sm:pb-16 lg:pt-12 lg:pb-24' : 'pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-24'} bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/20 relative overflow-hidden`}>
@@ -15,6 +16,11 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
       <div className="absolute bottom-20 left-20 w-80 h-80 bg-gentle-terracotta/8 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {!withId && (
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown text-center mb-10 sm:mb-12">
+            {t('about.title')}
+          </h1>
+        )}
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 mb-12">
           {/* Professional Photo */}
@@ -116,6 +122,18 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
             </CardContent>
           </Card>
         </div>
+
+        {withId && (
+          <div className="text-center mt-10">
+            <Link
+              to={language === "es" ? "/sobre-mi" : "/about"}
+              className="inline-flex items-center gap-2 text-gentle-terracotta hover:text-earth-clay font-semibold transition-colors"
+            >
+              {t("common.readMore")}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        )}
 
       </div>
     </section>

@@ -1,7 +1,7 @@
 # SEO Audit — Arturo Suman | Psicólogo Forense
 
 **Site:** arturosuman.com  
-**Audit date:** February 2026  
+**Audit date:** February 2026 (updated)  
 **Focus:** On-page SEO, technical foundations, local SEO, and content.
 
 ---
@@ -11,71 +11,68 @@
 ### Title & meta
 - **Unique, keyword-rich titles** on homepage and inner pages (e.g. “Arturo Suman | Psicólogo Forense y Clínico en Ciudad de Panamá”).
 - **Meta descriptions** are present and differentiated per page, with location and service keywords.
-- **Keywords meta** is used with relevant terms (psicólogo forense Panamá, evaluación psicológica forense, etc.).
+- **Keywords meta** used with relevant terms (psicólogo forense Panamá, evaluación psicológica forense, etc.).
 
 ### Technical & crawlability
-- **Canonical URLs** set on index.html and on key pages (Contact, About, Services, Experience).
-- **Robots:** `index, follow` in place.
+- **Canonical URLs** set in `index.html` and on key pages (Contact, About, Services, Experience, Privacy).
+- **Robots:** `index, follow` in place; `robots.txt` allows all and references sitemap.
 - **Google Site Verification** and **Google Tag Manager** configured.
-- **Structured data:** LocalBusiness/Psychologist/MedicalBusiness and FAQPage schema in `index.html`; telephone and email updated to (507) 6550-9216 and psic.suman@gmail.com.
+- **Structured data:** LocalBusiness/Psychologist/MedicalBusiness and FAQPage schema in `index.html`; telephone `+507 6550-9216` and email in schema.
+- **XML sitemap** at `/sitemap.xml` with main URLs; referenced in `robots.txt`.
+- **viewport** includes `viewport-fit=cover` for safe areas on mobile.
 
 ### Local SEO
-- **Geo meta tags:** `geo.region` (PA-8), `geo.placename`, ICBM coordinates.
-- **Address** consistently: Century Tower, Piso 19, Oficina 1920, Ciudad de Panamá.
-- **Contact** in footer and contact section: email, (507) 6550-9216, WhatsApp link.
+- **Geo meta:** `geo.region` (PA-8), `geo.placename`, ICBM coordinates.
+- **Address** consistent: Century Tower, Piso 19, Oficina 1920, Ciudad de Panamá.
+- **Contact** in footer and contact section: email, (507) 6550-9216, WhatsApp.
+- **Schema** includes `geo` coordinates and `areaServed`.
 
 ### Social & sharing
 - **Open Graph** and **Twitter Card** meta (title, description, image, url, locale).
 - **og:locale** and **og:locale:alternate** for ES/EN.
 
 ### Content & UX
-- **FAQs** with schema and relevant long-tail questions (jurisdicciones, tiempo de evaluación).
-- **Clear CTAs:** Consultar, WhatsApp, contact form.
-- **Bilingual** (ES/EN) with language toggle.
+- **FAQs** with FAQPage schema and long-tail questions.
+- **Clear CTAs:** Consultar, WhatsApp FAB.
+- **Bilingual** (ES/EN) with language toggle; **Privacy page** at `/privacidad` and `/privacy`.
+- **LCP preload** for hero background image.
+
+### hreflang
+- **hreflang** links present in `index.html` (es, en, x-default). All point to the same base URL; fine for a single-URL SPA where language is toggled client-side.
 
 ---
 
 ## 2. Recommendations
 
-### High priority
+### High priority (implemented)
 
-1. **h1 uniqueness**
-   - Ensure every page has exactly one `<h1>` that matches the main topic (e.g. Contacto on contact page, Servicios on services).
-   - Homepage: keep “Arturo Suman” or “Psicólogo Forense y Clínico” as the primary H1.
+1. **One H1 per page** — Done. Inner pages (About, Services, Experience, Contact) now render the main heading as `<h1>` when used as the standalone page (`withId={false}`). About page also has a dedicated H1 “Sobre Mí” at the top.
 
-2. **Canonical and hreflang**
-   - Confirm canonicals match the final URLs (with or without trailing slash) across the site and in sitemap.
-   - Add **hreflang** for ES/EN (e.g. `es` for `/sobre-mi`, `en` for `/about`) so search engines know the language/region versions.
+2. **Phone format consistency** — Done. **(507) 6550-9216** is used everywhere: index.html (OG, Twitter, schema, FAQ), LanguageContext (privacy copy), and all page meta (About, Services, Contact, Privacy).
 
-3. **Contact / WhatsApp copy**
-   - Fix any typo like “mer horas” → “menos horas” in the WhatsApp/contact CTA so the text is correct and professional.
-
-4. **Privacy page**
-   - Add a real route and page for **Aviso de Privacidad** (e.g. `/aviso-de-privacidad`) so the footer link doesn’t 404. Include a short, clear privacy notice; good for trust and, where required, compliance.
+3. **Sitemap: Privacy and lastmod** — Done. `sitemap.xml` and `public/sitemap.xml` include `/privacidad/` and `/privacy/` with `<lastmod>2026-02-20</lastmod>`, `<changefreq>`, and `<priority>` for all URLs.
 
 ### Medium priority
 
-5. **Sitemap**
-   - Add an **XML sitemap** (e.g. `/sitemap.xml`) listing all important URLs (home, sobre-mi, servicios, experiencia, contacto, and EN equivalents if you use separate URLs).
-   - Submit the sitemap in Google Search Console.
+4. **Canonical / URL consistency**
+   - Sitemap uses trailing slashes (e.g. `https://arturosuman.com/sobre-mi/`); app routes are without (e.g. `/sobre-mi`). Ensure redirects or canonical tags match how you want URLs to appear (one convention site-wide).
 
-6. **Page-specific schema**
-   - Keep one main LocalBusiness/Psychologist block on the homepage.
-   - On inner pages, avoid duplicating the full business block; use only page-specific schema (e.g. FAQPage where FAQs appear, or Service for service pages) to reduce redundancy.
+5. **Image SEO** — Done. Hero uses an `<img>` with descriptive alt (“Arturo Suman, psicólogo forense y clínico, consultorio Century Tower, Ciudad de Panamá, Panamá”) and `fetchPriority="high"`. AboutSection photo and Navigation logo already have strong alt text.
 
-7. **Image SEO**
-   - Use **descriptive file names** and **alt text** for key images (e.g. photo of Arturo Suman, office, hero image). Alt text can include “Arturo Suman, psicólogo forense, Ciudad de Panamá” where relevant.
+6. **Internal links** — Done. Homepage sections (About, Services, Experience, FAQ) include “Ver más” / “See more” links to `/sobre-mi`|`/about`, `/servicios`|`/services`, `/experiencia`|`/experience`, and “¿Listo para consultar?” to `/contacto`|`/contact`.
 
-8. **Internal links**
-   - Link from homepage sections (Servicios, Experiencia, FAQ) to the corresponding inner pages (/servicios, /experiencia, /contacto) to spread authority and clarify structure.
+7. **Page-specific schema**
+   - Keep one main LocalBusiness/Psychologist block on the homepage. On inner pages, avoid duplicating the full business block; use only page-specific schema if needed (e.g. FAQPage only where FAQs appear).
 
 ### Lower priority
 
-9. **Core Web Vitals**
-   - Preload is already used for a critical image; monitor LCP and CLS (e.g. in Search Console and PageSpeed Insights). Prefer next-gen image formats (e.g. WebP) where possible.
+8. **Core Web Vitals**
+   - LCP preload is in place; monitor LCP and CLS in Search Console and PageSpeed Insights. Prefer next-gen image formats (e.g. WebP) where possible.
+
+9. **Legacy / unused pages** — Addressed. Legacy pages and components related to Resilient Mind Counseling have been removed; the codebase focuses solely on Arturo Suman.
 
 10. **Blog or resources (optional)**
-    - A small “Recursos” or “Artículos” section with articles on evaluación psicológica forense, peritaje, jurisdicciones, etc., can support long-tail search and authority. Not mandatory for a consultant site.
+    - A small “Recursos” or “Artículos” section on evaluación psicológica forense, peritaje, jurisdicciones, etc., can support long-tail search. Optional for a consultant site.
 
 ---
 
@@ -90,21 +87,25 @@
 | Telephone/email in schema & footer | Done — (507) 6550-9216 |
 | Geo / local meta | Done |
 | OG & Twitter cards | Done |
-| One H1 per page | Verify in templates |
-| hreflang ES/EN | To do |
-| XML sitemap | To do |
-| Aviso de Privacidad page | To do |
-| Fix “menos horas” / CTA copy | Verify in UI |
-| Image alt text | Review key images |
+| XML sitemap + robots.txt | Done |
+| Privacy page (Aviso de Privacidad) | Done |
+| hreflang (es, en, x-default) | Done |
+| One H1 per page | Done (inner pages use h1 when standalone) |
+| Phone format everywhere | Done — (507) 6550-9216 |
+| Sitemap includes /privacidad, /privacy, lastmod | Done |
+| Image alt text (hero, key images) | Done |
+| Internal links from home | Done |
 
 ---
 
-## 4. Contact page (quick check)
+## 4. Implemented quick wins (Feb 2026)
 
-- **Title:** “Contacto - Arturo Suman | Psicólogo Forense Panamá” — good.
-- **Content:** Contact info, location, response time (24h), form and WhatsApp — good for relevance and conversions.
-- **Schema:** Telephone +507 6550-9216 and email are now consistent in index.html and footer.
+- **Phone:** All copy and meta use **(507) 6550-9216**.
+- **Sitemap:** `/privacidad/` and `/privacy/` added with lastmod and priority.
+- **H1:** About, Services, Experience, Contact render `<h1>` when `withId={false}`.
+- **Hero image:** Replaced CSS-only background with `<img>` + descriptive alt and `fetchPriority="high"`.
+- **Internal links:** “Ver más” / “See more” and contact CTA from FAQ added with language-aware routes.
 
 ---
 
-**Conclusion:** The site has a solid SEO base (titles, meta, schema, local SEO, contact consistency). The main next steps are: add hreflang, add a sitemap, add a real Aviso de Privacidad page, and double-check one H1 per page and CTA copy.
+**Conclusion:** The site now has a strong, implementation-complete SEO setup: unique titles and meta, canonicals, structured data, local/geo, sitemap with privacy URLs and lastmod, hreflang, one H1 per page, consistent phone formatting, descriptive image alt (including hero), and internal links from the homepage to key pages.
