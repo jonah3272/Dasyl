@@ -2,6 +2,13 @@
   command = "npm ci && npm run build"
   publish = "dist"
 
+# Canonical: non-www. Redirect www to non-www (301) so Google indexes arturosuman.com
+[[redirects]]
+  from = "https://www.arturosuman.com/*"
+  to = "https://arturosuman.com/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
