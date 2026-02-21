@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, MapPin, Briefcase, ArrowRight } from "lucide-react";
 
 export default function ExperienceSection({ withId = true }: { withId?: boolean }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id={withId ? "experience" : undefined} className={`${withId ? 'py-8 sm:py-12 lg:py-16' : 'pt-24 pb-8 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-16'} bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/20 relative overflow-hidden`}>
