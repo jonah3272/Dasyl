@@ -13,10 +13,9 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={t("whatsapp.label")}
-      className="fixed z-50 flex items-center gap-2 rounded-full pl-4 pr-5 py-3 min-h-[56px] shadow-xl bg-[#25D366]/90 hover:bg-[#25D366] text-white font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-scale-in-bounce border border-white/20 right-[max(1rem,env(safe-area-inset-right))] bottom-[max(5.5rem,calc(5.5rem+env(safe-area-inset-bottom)))] sm:bottom-6 sm:right-6"
+      className="fixed z-50 flex items-center justify-center rounded-full w-14 h-14 min-w-[56px] min-h-[56px] shadow-lg bg-[#25D366] hover:bg-[#20BD5A] text-white transition-all duration-200 hover:scale-105 active:scale-95 right-[max(1rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] sm:bottom-6 sm:right-6"
     >
-      <MessageCircle className="w-6 h-6 shrink-0" strokeWidth={2.5} />
-      <span className="whitespace-nowrap">WhatsApp</span>
+      <MessageCircle className="w-7 h-7 shrink-0" strokeWidth={2} />
     </a>
   );
 }

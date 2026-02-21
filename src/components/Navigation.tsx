@@ -60,8 +60,7 @@ const Navigation = () => {
               className="h-8 w-8 sm:h-10 sm:w-10 object-contain"
             />
             <span className="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-white truncate">
-              <span className="hidden sm:inline">Arturo Suman</span>
-              <span className="sm:hidden">A. Suman</span>
+              Arturo Suman
             </span>
           </Link>
           
@@ -169,16 +168,9 @@ const Navigation = () => {
         )}
       </nav>
 
-      {/* Floating CTA Button - Mobile Optimized; safe area for notched devices */}
-      <div className="fixed z-40 md:hidden left-[max(1rem,env(safe-area-inset-left))] right-[max(1rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] pb-2">
-        {onHome ? (
-          <Button 
-            className="w-full min-h-[48px]"
-            onClick={handleContactClick}
-          >
-            {t("nav.book")}
-          </Button>
-        ) : (
+      {/* Floating CTA - only on inner pages (on home we have hero Consultar + WhatsApp FAB) */}
+      {!onHome && (
+        <div className="fixed z-40 md:hidden left-[max(1rem,env(safe-area-inset-left))] right-[max(1rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] pb-2">
           <Link to="/contacto" className="block">
             <Button 
               className="w-full min-h-[48px]"
@@ -187,8 +179,8 @@ const Navigation = () => {
               {t("nav.book")}
             </Button>
           </Link>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 };
