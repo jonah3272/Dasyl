@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.arturosuman.com"
+        }
+      ],
+      "destination": "https://arturosuman.com/:path*",
+      "permanent": true
+    }
+  ]
+}
