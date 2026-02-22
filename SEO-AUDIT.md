@@ -55,7 +55,7 @@
 ### Medium priority
 
 4. **Canonical / URL consistency**
-   - Sitemap uses trailing slashes (e.g. `https://arturosuman.com/sobre-mi/`); app routes are without (e.g. `/sobre-mi`). Ensure redirects or canonical tags match how you want URLs to appear (one convention site-wide).
+   - Sitemap uses trailing slashes (e.g. `https://www.arturosuman.com/sobre-mi/`); app routes are without (e.g. `/sobre-mi`). Ensure redirects or canonical tags match how you want URLs to appear (one convention site-wide).
 
 5. **Image SEO** — Done. Hero uses an `<img>` with descriptive alt (“Arturo Suman, psicólogo forense y clínico, consultorio Century Tower, Ciudad de Panamá, Panamá”) and `fetchPriority="high"`. AboutSection photo and Navigation logo already have strong alt text.
 

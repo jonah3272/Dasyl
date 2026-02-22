@@ -13,11 +13,11 @@ export default function OGImage({
 }: OGImageProps) {
   return (
     <Helmet>
-      <meta property="og:image" content={`https://arturosuman.com${image}`} />
+      <meta property="og:image" content={`https://www.arturosuman.com${image}`} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={title} />
-      <meta name="twitter:image" content={`https://arturosuman.com${image}`} />
+      <meta name="twitter:image" content={`https://www.arturosuman.com${image}`} />
     </Helmet>
   );
 }

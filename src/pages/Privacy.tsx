@@ -12,7 +12,7 @@ export default function Privacy() {
       <Helmet>
         <title>{t("privacy.title")} | Arturo Suman – Psilegconsultants</title>
         <meta name="description" content={`${t("privacy.intro")} ${t("privacy.contact")}: psic.suman@gmail.com, (507) 6550-9216.`} />
-        <link rel="canonical" href={`https://arturosuman.com${privacyPath}/`} />
+        <link rel="canonical" href={`https://www.arturosuman.com${privacyPath}/`} />
       </Helmet>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28">
         <h1 className="text-3xl sm:text-4xl font-bold text-cozy-brown mb-2">

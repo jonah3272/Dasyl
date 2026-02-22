@@ -12,7 +12,7 @@ const SEOHead = ({
   title = "Arturo Suman | Psicólogo Forense y Clínico en Ciudad de Panamá, Panamá | Evaluación Psicológica Forense",
   description = "Arturo Suman, psicólogo forense y clínico en Ciudad de Panamá, Panamá. Más de 17 años de experiencia, más de 4,000 evaluaciones psicológicas forenses. Consultoría especializada en Psicología Forense y Clínica. Consultorio en Century Tower.",
   keywords = "psicólogo forense Panamá, psicólogo forense Ciudad de Panamá, psicólogo clínico Panamá, evaluación psicológica forense Panamá, peritaje psicológico Panamá, psicología forense Ciudad de Panamá, Arturo Suman, metaperitaje psicológico Panamá, testimonio experto Panamá, perito psicológico Ciudad de Panamá",
-  canonicalUrl = "https://arturosuman.com",
+  canonicalUrl = "https://www.arturosuman.com",
   type = "website"
 }: SEOHeadProps) => {
   return (

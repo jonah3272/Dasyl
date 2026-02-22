@@ -11,10 +11,10 @@ export default function Services() {
         <title>{t('services.title')} - Arturo Suman | Psicólogo Forense Panamá</title>
         <meta name="description" content="Servicios de psicología forense en Panamá – Psilegconsultants. Evaluación psicológica forense, metaperitaje y testimonio experto. Arturo Suman, Century Tower, Ciudad de Panamá. Contacto: psic.suman@gmail.com, (507) 6550-9216." />
         <meta name="keywords" content="evaluación psicológica forense Panamá, peritaje psicológico Ciudad de Panamá, metaperitaje psicológico Panamá, testimonio experto Panamá, Psilegconsultants, psicólogo forense servicios Panamá, evaluación penitenciaria Panamá" />
-        <link rel="canonical" href="https://arturosuman.com/servicios/" />
+        <link rel="canonical" href="https://www.arturosuman.com/servicios/" />
         <meta property="og:title" content={`${t('services.title')} - Arturo Suman | Psicólogo Forense Panamá`} />
         <meta property="og:description" content={`Servicios de psicología forense en Panamá: evaluación psicológica forense, metaperitaje y testimonio experto.`} />
-        <meta property="og:url" content="https://arturosuman.com/servicios/" />
+        <meta property="og:url" content="https://www.arturosuman.com/servicios/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:title" content={`${t('services.title')} - Arturo Suman`} />
         <meta name="twitter:description" content={`Servicios de psicología forense en Ciudad de Panamá, Panamá.`} />
